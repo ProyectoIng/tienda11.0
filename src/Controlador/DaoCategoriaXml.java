@@ -30,7 +30,7 @@ public class DaoCategoriaXml {
     Element CategoriaTrans = new Element("Categoria");//Aquí dentro van a estar los atributos del categoria
     //De aquí para abajo están todos los atributos de la categoria
     Element nombre = new Element("Nombre");
-    Element idCategoria = new Element("IdCategoria");
+    Element idCategoria = new Element("Id");
     
     
     //Aquí le asigno los valores de cada atributo a la categoria
@@ -83,7 +83,7 @@ public class DaoCategoriaXml {
     }
     
     private Categoria CategoriaToObject(Element element) throws ParseException {
-        Categoria nCategoria = new Categoria(element.getChildText("Nombre"),element.getChildText("IdCategoria"));
+        Categoria nCategoria = new Categoria(element.getChildText("Nombre"),element.getChildText("Id"));
         return nCategoria;
     }
     

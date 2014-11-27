@@ -6,17 +6,27 @@
 
 package Vista;
 
+import Controlador.*;
+import Modelo.*;
+import Vista.*;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author luis
  */
 public class PantallaAdminModificarCategoria extends javax.swing.JFrame {
 
-    /**
-     * Creates new form PantallaAdminModificarCategoria
-     */
-    public PantallaAdminModificarCategoria() {
+  DaoCategoriaXml datosCategoria = new DaoCategoriaXml();//Creo el objeto de datosUsuario para insertar el usuario en el xml
+    private boolean resultado = false;//un boolean para obtener un resultado de ingreso del usuario
+    static private String idaux;//Auxiliar del id del usuario
+    
+    
+    public PantallaAdminModificarCategoria(Categoria cat) {
         initComponents();
+        JTFNombre.setText(cat.getNombre());
+        JTFId.setText(cat.getIdCategoria());
+        
     }
 
     /**
@@ -28,21 +38,87 @@ public class PantallaAdminModificarCategoria extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jTextField2 = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        JTFNombre = new javax.swing.JTextField();
+        JTFId = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+
+        jTextField2.setText("jTextField2");
+
+        jLabel1.setText("jLabel1");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel2.setText("Nombre");
+
+        jLabel3.setText("Id");
+
+        jButton1.setText("Modificar Categoría");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(76, 76, 76)
+                        .addComponent(jLabel2)
+                        .addGap(31, 31, 31)
+                        .addComponent(JTFNombre))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addContainerGap(81, Short.MAX_VALUE)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(JTFId, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(41, 41, 41)
+                .addComponent(jButton1))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(105, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JTFNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addGap(29, 29, 29)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JTFId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3)
+                    .addComponent(jButton1))
+                .addGap(123, 123, 123))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        
+         //Creo objeto de usuario con los datos modificados
+        Categoria cat = new Categoria(JTFNombre.getText(), JTFId.getText());
+        //procedo a modificar los datos tanto en la tabla como en el archivo
+        resultado = datosCategoria.actualizarCategoria(cat);
+        datosCategoria.todasLasCategorias();
+        
+        if (resultado == true) {
+                        JOptionPane.showMessageDialog(null, "Categoria modificada con exito!", "Operacion Exitosa", JOptionPane.INFORMATION_MESSAGE);
+                        //limpia();
+                        PantallaAdminTablaCategorias _PantallaAdminTablaCategorias  = new PantallaAdminTablaCategorias(new javax.swing.JFrame(), true, idaux);
+                        _PantallaAdminTablaCategorias.setVisible(true);
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Operacion Fallida", "Error", JOptionPane.ERROR_MESSAGE);
+                    
+                }
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -74,11 +150,19 @@ public class PantallaAdminModificarCategoria extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new PantallaAdminModificarCategoria().setVisible(true);
+                Categoria cat = null;
+                new PantallaAdminModificarCategoria(cat).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField JTFId;
+    private javax.swing.JTextField JTFNombre;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }

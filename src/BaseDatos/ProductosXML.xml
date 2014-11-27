@@ -1,20 +1,11 @@
 <root>
   <Producto>
-    <Nombre>Yate</Nombre>
-    <Seo>yate-001</Seo>
-    <Descripcion>Yate de lujo gigante con putas</Descripcion>
-    <Precio>1000000$</Precio>
-    <Imagen>yate.jpg</Imagen>
-    <Id>3</Id>
-    <Estado>activo</Estado>
-  </Producto>
-  <Producto>
-    <Nombre>carro</Nombre>
-    <Seo>carro-001</Seo>
-    <Descripcion>carro lindo</Descripcion>
-    <Precio>1200000</Precio>
-    <Imagen>auto.jpg</Imagen>
+    <Nombre>1</Nombre>
+    <Seo>1</Seo>
+    <Descripcion>2</Descripcion>
+    <Precio>1</Precio>
+    <Imagen>1</Imagen>
     <Id>1</Id>
-    <Estado>Inactivo</Estado>
+    <Estado>1</Estado>
   </Producto>
 </root>

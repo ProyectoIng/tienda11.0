@@ -1,4 +1,10 @@
-
 <root>
-    
+  <Categoria>
+    <Nombre>botas</Nombre>
+    <Id>4</Id>
+  </Categoria>
+  <Categoria>
+    <Nombre>móviles</Nombre>
+    <Id>1</Id>
+  </Categoria>
 </root>
