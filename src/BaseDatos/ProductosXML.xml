@@ -1,11 +1,12 @@
 <root>
   <Producto>
-    <Nombre>1</Nombre>
-    <Seo>1</Seo>
-    <Descripcion>2</Descripcion>
-    <Precio>1</Precio>
-    <Imagen>1</Imagen>
+    <Nombre>Mitsubishi</Nombre>
+    <Seo>mitsu-01</Seo>
+    <Descripcion>lujoso</Descripcion>
+    <Precio>9999</Precio>
+    <Imagen>auto.jpg</Imagen>
     <Id>1</Id>
-    <Estado>1</Estado>
+    <Estado>activo</Estado>
+    <CantidadMinima>15</CantidadMinima>
   </Producto>
 </root>

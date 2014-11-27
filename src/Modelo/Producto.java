@@ -16,8 +16,9 @@ public class Producto {
     private String imagen;
     private String idProducto;
     private String estadoProducto;
+    private String cantidadMinima;
 
-    public Producto(String nombre, String seo, String descripcion, String precio, String imagen, String idProducto, String estadoProducto) {
+    public Producto(String nombre, String seo, String descripcion, String precio, String imagen, String idProducto, String estadoProducto, String cantidadMinima) {
         this.nombre = nombre;
         this.seo = seo;
         this.descripcion = descripcion;
@@ -25,6 +26,7 @@ public class Producto {
         this.imagen = imagen;
         this.idProducto = idProducto;
         this.estadoProducto = estadoProducto;
+        this.cantidadMinima = cantidadMinima;
     }
 
     public String getNombre() {
@@ -82,6 +84,16 @@ public class Producto {
     public void setEstadoProducto(String estadoProducto) {
         this.estadoProducto = estadoProducto;
     }
+
+    public String getCantidadMinima() {
+        return cantidadMinima;
+    }
+
+    public void setCantidadMinima(String cantidadMinima) {
+        this.cantidadMinima = cantidadMinima;
+    }
+
+    
 
     
    

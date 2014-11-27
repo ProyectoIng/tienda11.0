@@ -28,6 +28,7 @@ public class PantallaAdminModificarProducto extends javax.swing.JFrame {
         JTFImagen.setText(pro.getImagen());
         JTFIdProducto.setText(pro.getIdProducto());
         JTFEstadoProducto.setText(pro.getEstadoProducto());
+        JTFCantidadMinima.setText(pro.getCantidadMinima());
         System.out.println("id producto: "+pro.getIdProducto());
     }
 
@@ -55,6 +56,8 @@ public class PantallaAdminModificarProducto extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         JTFSeo = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        JTFCantidadMinima = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -79,6 +82,8 @@ public class PantallaAdminModificarProducto extends javax.swing.JFrame {
 
         jLabel5.setText("Id");
 
+        jLabel8.setText("Cantidad Minima");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -86,34 +91,27 @@ public class PantallaAdminModificarProducto extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(73, 73, 73)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel1))
-                        .addGap(36, 36, 36)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(JTFSeo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(JTFDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(JTFPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(JTFNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(195, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel7))
-                        .addGap(54, 54, 54)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(JTFImagen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(JTFEstadoProducto)
-                                    .addComponent(JTFIdProducto))
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton1)))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel8))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(JTFImagen, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JTFDescripcion, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JTFPrecio, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JTFSeo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JTFIdProducto, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(JTFEstadoProducto, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(JTFNombre, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JTFCantidadMinima, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(54, 54, 54)
+                .addComponent(jButton1)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {JTFDescripcion, JTFEstadoProducto, JTFIdProducto, JTFImagen, JTFNombre, JTFPrecio, JTFSeo});
@@ -148,9 +146,14 @@ public class PantallaAdminModificarProducto extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
-                    .addComponent(JTFEstadoProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
-                .addContainerGap(56, Short.MAX_VALUE))
+                    .addComponent(JTFEstadoProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton1)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel8)
+                        .addComponent(JTFCantidadMinima, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         pack();
@@ -159,7 +162,7 @@ public class PantallaAdminModificarProducto extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
         //Creo objeto de usuario con los datos modificados
-        Producto product = new Producto(JTFNombre.getText(), JTFSeo.getText(), JTFDescripcion.getText(), JTFPrecio.getText(), JTFImagen.getText(), JTFIdProducto.getText(), JTFEstadoProducto.getText());
+        Producto product = new Producto(JTFNombre.getText(), JTFSeo.getText(), JTFDescripcion.getText(), JTFPrecio.getText(), JTFImagen.getText(), JTFIdProducto.getText(), JTFEstadoProducto.getText(), JTFCantidadMinima.getText());
         //procedo a modificar los datos tanto en la tabla como en el archivo
         resultado = datosProducto.actualizarProducto(product);
         datosProducto.todosLosProductos();
@@ -214,6 +217,7 @@ public class PantallaAdminModificarProducto extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField JTFCantidadMinima;
     private javax.swing.JTextField JTFDescripcion;
     private javax.swing.JTextField JTFEstadoProducto;
     private javax.swing.JTextField JTFIdProducto;
@@ -229,5 +233,6 @@ public class PantallaAdminModificarProducto extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     // End of variables declaration//GEN-END:variables
 }

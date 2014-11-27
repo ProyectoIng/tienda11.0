@@ -34,6 +34,7 @@ public class DaoProductoXml {
     Element imagen = new Element("Imagen");
     Element idProducto = new Element("Id");
     Element estadoPoducto = new Element("Estado");
+    Element cantidadMinima = new Element("CantidadMinima");
     
     
     //Aquí le asigno los valores de cada atributo al producto
@@ -44,6 +45,7 @@ public class DaoProductoXml {
     imagen.setText(nProducto.getImagen());
     idProducto.setText(nProducto.getIdProducto());
     estadoPoducto.setText(nProducto.getEstadoProducto());
+    cantidadMinima.setText(nProducto.getCantidadMinima());
     
     
     //Luego paso todos los datos a ProductoTrans
@@ -54,6 +56,7 @@ public class DaoProductoXml {
     ProductoTrans.addContent(imagen);
     ProductoTrans.addContent(idProducto);
     ProductoTrans.addContent(estadoPoducto);
+    ProductoTrans.addContent(cantidadMinima);
     
     return ProductoTrans;
     
@@ -97,7 +100,7 @@ public class DaoProductoXml {
     }
     
     private Producto ProductoToObject(Element element) throws ParseException {
-        Producto nProducto = new Producto(element.getChildText("Nombre"),element.getChildText("Seo"),element.getChildText("Descripcion"),element.getChildText("Precio"),element.getChildText("Imagen"),element.getChildText("Id"),element.getChildText("Estado"));
+        Producto nProducto = new Producto(element.getChildText("Nombre"),element.getChildText("Seo"),element.getChildText("Descripcion"),element.getChildText("Precio"),element.getChildText("Imagen"),element.getChildText("Id"),element.getChildText("Estado"),element.getChildText("CantidadMinima"));
         return nProducto;
     }
     

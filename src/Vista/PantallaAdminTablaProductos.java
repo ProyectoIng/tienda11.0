@@ -29,6 +29,7 @@ public class PantallaAdminTablaProductos extends javax.swing.JFrame {
         modelo.addColumn("Imagen");
         modelo.addColumn("Id");
         modelo.addColumn("Estado");
+        modelo.addColumn("CantidadMinima");
         
         this.jTable1.setModel(modelo);//a mi tabla table le asigno el tipo modelo que cree ahora
         
@@ -53,7 +54,7 @@ public class PantallaAdminTablaProductos extends javax.swing.JFrame {
         
             
              if (pro != null) {
-               String[] row = {pro.getNombre(),pro.getSeo(),pro.getDescripcion(),pro.getPrecio(),pro.getImagen(),pro.getIdProducto(),pro.getEstadoProducto()};
+               String[] row = {pro.getNombre(),pro.getSeo(),pro.getDescripcion(),pro.getPrecio(),pro.getImagen(),pro.getIdProducto(),pro.getEstadoProducto(),pro.getCantidadMinima()};
                modelo.addRow(row);
              }
             
@@ -156,7 +157,7 @@ public class PantallaAdminTablaProductos extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         
         int filaSeleccionada = jTable1.getSelectedRow();//Obtengo la fila seleccionada
-        String nombre,seo,descripcion,precio,imagen,id,estado;
+        String nombre,seo,descripcion,precio,imagen,id,estado,cantidadMinima;
         //meto los valores de la fila seleccionada en las variables
         nombre = jTable1.getValueAt(filaSeleccionada, 0).toString();
         seo = jTable1.getValueAt(filaSeleccionada, 1).toString();
@@ -165,9 +166,10 @@ public class PantallaAdminTablaProductos extends javax.swing.JFrame {
         imagen = jTable1.getValueAt(filaSeleccionada, 4).toString();
         id = jTable1.getValueAt(filaSeleccionada, 5).toString();
         estado = jTable1.getValueAt(filaSeleccionada, 6).toString();
+        cantidadMinima = jTable1.getValueAt(filaSeleccionada, 7).toString();
         
         //creo objeto producto
-        Producto pro = new Producto(nombre, seo, descripcion, precio, imagen, id, estado);
+        Producto pro = new Producto(nombre, seo, descripcion, precio, imagen, id, estado, cantidadMinima);
         //abro la pantalla de modificar y le paso como parametro mi objeto
         PantallaAdminModificarProducto _PantallaModificarProducto = new PantallaAdminModificarProducto(pro);
         _PantallaModificarProducto.setVisible(true);
