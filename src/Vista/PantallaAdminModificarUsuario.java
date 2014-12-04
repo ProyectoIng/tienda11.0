@@ -8,7 +8,11 @@ package Vista;
 
 import Controlador.*;
 import Modelo.*;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JLayeredPane;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 
 public class PantallaAdminModificarUsuario extends javax.swing.JFrame {
@@ -32,6 +36,18 @@ public class PantallaAdminModificarUsuario extends javax.swing.JFrame {
         JTFRol.setText(user.getRol());
         JTFIdUsuario.setText(user.getIdUsuario());
         JTFEstadoUsuario.setText(user.getEstadoUsuario());
+        
+        //imagen de fondo
+        setLocationRelativeTo(null);
+        setResizable(false);
+        setTitle("Pantalla");
+        
+        ((JPanel)getContentPane()).setOpaque(false);
+        ImageIcon uno = new ImageIcon(this.getClass().getResource("/imagenes/PantallaAccion.jpg"));
+        JLabel fondo = new JLabel();
+        fondo.setIcon(uno);
+        getLayeredPane().add(fondo,JLayeredPane.FRAME_CONTENT_LAYER);
+        fondo.setBounds(0,0,uno.getIconWidth(),uno.getIconHeight());
     }
 
     /**
@@ -70,8 +86,6 @@ public class PantallaAdminModificarUsuario extends javax.swing.JFrame {
         JTFFechaRegistro = new javax.swing.JTextField();
         JTFMetodoDePago = new javax.swing.JTextField();
         JTFUser = new javax.swing.JTextField();
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         JTFApellido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -313,8 +327,6 @@ public class PantallaAdminModificarUsuario extends javax.swing.JFrame {
     private javax.swing.JTextField JTFPassword;
     private javax.swing.JTextField JTFRol;
     private javax.swing.JTextField JTFUser;
-    private javax.swing.JTextField JTFUsername;
-    private javax.swing.JTextField JTFUsername1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

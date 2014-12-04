@@ -6,21 +6,23 @@ import java.util.ArrayList;
 
 public class CestaDeCompras {
     
-    private ArrayList<Producto> productosDeCesta;
+    private ArrayList<DetalleDeCompra> productosDeCesta;
     private String fechaCesta;
+    private String comprador;
     private String idCesta;
 
-    public CestaDeCompras(ArrayList<Producto> productosDeCesta, String fechaCesta, String idCesta) {
+    public CestaDeCompras(ArrayList<DetalleDeCompra> productosDeCesta, String fechaCesta, String comprador, String idCesta) {
         this.productosDeCesta = productosDeCesta;
         this.fechaCesta = fechaCesta;
+        this.comprador = comprador;
         this.idCesta = idCesta;
     }
 
-    public ArrayList<Producto> getProductosDeCesta() {
+    public ArrayList<DetalleDeCompra> getProductosDeCesta() {
         return productosDeCesta;
     }
 
-    public void setProductosDeCesta(ArrayList<Producto> productosDeCesta) {
+    public void setProductosDeCesta(ArrayList<DetalleDeCompra> productosDeCesta) {
         this.productosDeCesta = productosDeCesta;
     }
 
@@ -32,6 +34,14 @@ public class CestaDeCompras {
         this.fechaCesta = fechaCesta;
     }
 
+    public String getComprador() {
+        return comprador;
+    }
+
+    public void setComprador(String comprador) {
+        this.comprador = comprador;
+    }
+
     public String getIdCesta() {
         return idCesta;
     }
@@ -39,6 +49,8 @@ public class CestaDeCompras {
     public void setIdCesta(String idCesta) {
         this.idCesta = idCesta;
     }
+
+    
     
     
     

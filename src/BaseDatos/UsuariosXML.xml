@@ -1,47 +1,32 @@
 <root>
   <Usuario>
-    <Nombre>luis</Nombre>
-    <Apellido>garcia</Apellido>
-    <Cedula>23707400</Cedula>
-    <Username>luisito</Username>
+    <Nombre>Luis</Nombre>
+    <Apellido>García</Apellido>
+    <Cedula>12345678</Cedula>
+    <Username>maxluis</Username>
     <Password>12345</Password>
-    <Correo>@@@@</Correo>
-    <DireccionFisica>caracas</DireccionFisica>
-    <FechaDeNacimiento>12-12-12</FechaDeNacimiento>
-    <MetodoDePago>cheque</MetodoDePago>
-    <FechaDeRegistro>12-11-12</FechaDeRegistro>
+    <Correo>luisgar@hotmail.com</Correo>
+    <DireccionFisica>Mi casa</DireccionFisica>
+    <FechaDeNacimiento>14-05-1954</FechaDeNacimiento>
+    <MetodoDePago>Visa</MetodoDePago>
+    <FechaDeRegistro>4-12-2014</FechaDeRegistro>
     <Rol>admin</Rol>
     <Id>1</Id>
-    <EstadoDeUsuario>ACTIVO</EstadoDeUsuario>
+    <EstadoDeUsuario>activo</EstadoDeUsuario>
   </Usuario>
   <Usuario>
-    <Nombre>juan</Nombre>
-    <Apellido>ariza</Apellido>
-    <Cedula>21345678</Cedula>
-    <Username>juana</Username>
-    <Password>2222</Password>
-    <Correo>@@loca@</Correo>
-    <DireccionFisica>caraloca</DireccionFisica>
-    <FechaDeNacimiento>11-11-11</FechaDeNacimiento>
-    <MetodoDePago>orto</MetodoDePago>
-    <FechaDeRegistro>12-11-12</FechaDeRegistro>
-    <Rol>perra</Rol>
+    <Nombre>Juan</Nombre>
+    <Apellido>Ariza</Apellido>
+    <Cedula>11111111</Cedula>
+    <Username>arizajuan</Username>
+    <Password>arijuan</Password>
+    <Correo>juanariza@gmail.com</Correo>
+    <DireccionFisica>Su apto</DireccionFisica>
+    <FechaDeNacimiento>12-03-1943</FechaDeNacimiento>
+    <MetodoDePago>Mastercard</MetodoDePago>
+    <FechaDeRegistro>2-12-2014</FechaDeRegistro>
+    <Rol>admin</Rol>
     <Id>2</Id>
-    <EstadoDeUsuario>PASIVA</EstadoDeUsuario>
-  </Usuario>
-  <Usuario>
-    <Nombre>luis</Nombre>
-    <Apellido>gamez</Apellido>
-    <Cedula>21345678</Cedula>
-    <Username>luisga</Username>
-    <Password>2334</Password>
-    <Correo>@@ggamez</Correo>
-    <DireccionFisica>caracas</DireccionFisica>
-    <FechaDeNacimiento>12-4-88</FechaDeNacimiento>
-    <MetodoDePago>tarjeta</MetodoDePago>
-    <FechaDeRegistro>modficado</FechaDeRegistro>
-    <Rol>Comprador</Rol>
-    <Id>3</Id>
-    <EstadoDeUsuario>Activo</EstadoDeUsuario>
+    <EstadoDeUsuario>activo</EstadoDeUsuario>
   </Usuario>
 </root>

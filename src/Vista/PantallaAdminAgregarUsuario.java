@@ -3,7 +3,11 @@
 package Vista;
 import Controlador.*;
 import Modelo.Usuario;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JLayeredPane;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 public class PantallaAdminAgregarUsuario extends javax.swing.JFrame {
 
@@ -13,6 +17,18 @@ public class PantallaAdminAgregarUsuario extends javax.swing.JFrame {
 
     public PantallaAdminAgregarUsuario() {
         initComponents();
+        
+        //imagen de fondo
+        setLocationRelativeTo(null);
+        setResizable(false);
+        setTitle("Pantalla");
+        
+        ((JPanel)getContentPane()).setOpaque(false);
+        ImageIcon uno = new ImageIcon(this.getClass().getResource("/imagenes/PantallaAccion.jpg"));
+        JLabel fondo = new JLabel();
+        fondo.setIcon(uno);
+        getLayeredPane().add(fondo,JLayeredPane.FRAME_CONTENT_LAYER);
+        fondo.setBounds(0,0,uno.getIconWidth(),uno.getIconHeight());
     }
 
     /**
@@ -51,8 +67,6 @@ public class PantallaAdminAgregarUsuario extends javax.swing.JFrame {
         JTFApellido = new javax.swing.JTextField();
         JTFNombre = new javax.swing.JTextField();
         JBAgregarUsuario = new javax.swing.JButton();
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("Nombre");
 

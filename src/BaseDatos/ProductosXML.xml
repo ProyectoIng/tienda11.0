@@ -9,4 +9,14 @@
     <Estado>activo</Estado>
     <CantidadMinima>15</CantidadMinima>
   </Producto>
+  <Producto>
+    <Nombre>Zapato nike</Nombre>
+    <Seo>zap-nike</Seo>
+    <Descripcion>zapato de correr</Descripcion>
+    <Precio>123400</Precio>
+    <Imagen>zap.jpg</Imagen>
+    <Id>2</Id>
+    <Estado>1</Estado>
+    <CantidadMinima>20</CantidadMinima>
+  </Producto>
 </root>
