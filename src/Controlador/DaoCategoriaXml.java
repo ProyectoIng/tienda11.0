@@ -3,6 +3,7 @@
 package Controlador;
 
 import Modelo.*;
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.ParseException;
@@ -15,6 +16,7 @@ import org.jdom.JDOMException;
 import org.jdom.input.SAXBuilder;
 import org.jdom.output.XMLOutputter;
 
+
 /**
  *
  * @author luis
@@ -24,6 +26,7 @@ public class DaoCategoriaXml {
     private Element root;//Creo el elemento raíz
    
     private String fileLocation = "src//BaseDatos//CategoriasXML.xml";//Le asigno una ruta al archivo XML de los categorias
+    
     
     private Element CategoriaXmlElement(Categoria nCategoria){//Elemento XML dentro del cual van a estar todos los demás del categoria
     
@@ -40,6 +43,7 @@ public class DaoCategoriaXml {
     //Luego paso todos los datos a CategoriaTrans
     CategoriaTrans.addContent(nombre);
     CategoriaTrans.addContent(idCategoria);
+    
     
     return CategoriaTrans;
     
@@ -159,10 +163,10 @@ public class DaoCategoriaXml {
         }
         return resultado;
     }
+    
+    
+// |
 
 
-    
-    
-    
-    
+
 }

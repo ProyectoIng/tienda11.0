@@ -1,14 +1,30 @@
 <root>
   <Categoria>
-    <Nombre>Apartamentos</Nombre>
-    <Id>3</Id>
-  </Categoria>
-  <Categoria>
     <Nombre>celulares</Nombre>
     <Id>5</Id>
   </Categoria>
   <Categoria>
     <Nombre>zapatos</Nombre>
     <Id>1</Id>
+  </Categoria>
+  <Categoria>
+    <Nombre>Tacos</Nombre>
+    <Id>9</Id>
+  </Categoria>
+  <Categoria>
+    <Nombre>Cables</Nombre>
+    <Id>22</Id>
+  </Categoria>
+  <Categoria>
+    <Nombre>Guitarra</Nombre>
+    <Id>100</Id>
+  </Categoria>
+  <Categoria>
+    <Nombre>qwewq</Nombre>
+    <Id>2123</Id>
+  </Categoria>
+  <Categoria>
+    <Nombre>vasos</Nombre>
+    <Id>23</Id>
   </Categoria>
 </root>

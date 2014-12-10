@@ -32,6 +32,8 @@ public class DaoProductoXml {
     Element descripcion = new Element("Descripcion");
     Element precio = new Element("Precio");
     Element imagen = new Element("Imagen");
+    Element categoria = new Element("Categoria");
+    Element proveedor = new Element("Proveedor");
     Element idProducto = new Element("Id");
     Element estadoPoducto = new Element("Estado");
     Element cantidadMinima = new Element("CantidadMinima");
@@ -43,6 +45,8 @@ public class DaoProductoXml {
     descripcion.setText(nProducto.getDescripcion());
     precio.setText(nProducto.getPrecio());
     imagen.setText(nProducto.getImagen());
+    categoria.setText(nProducto.getCategoria());
+    proveedor.setText(nProducto.getProveedor());
     idProducto.setText(nProducto.getIdProducto());
     estadoPoducto.setText(nProducto.getEstadoProducto());
     cantidadMinima.setText(nProducto.getCantidadMinima());
@@ -54,6 +58,8 @@ public class DaoProductoXml {
     ProductoTrans.addContent(descripcion);
     ProductoTrans.addContent(precio);
     ProductoTrans.addContent(imagen);
+    ProductoTrans.addContent(categoria);
+    ProductoTrans.addContent(proveedor);
     ProductoTrans.addContent(idProducto);
     ProductoTrans.addContent(estadoPoducto);
     ProductoTrans.addContent(cantidadMinima);
@@ -100,7 +106,7 @@ public class DaoProductoXml {
     }
     
     private Producto ProductoToObject(Element element) throws ParseException {
-        Producto nProducto = new Producto(element.getChildText("Nombre"),element.getChildText("Seo"),element.getChildText("Descripcion"),element.getChildText("Precio"),element.getChildText("Imagen"),element.getChildText("Id"),element.getChildText("Estado"),element.getChildText("CantidadMinima"));
+        Producto nProducto = new Producto(element.getChildText("Nombre"),element.getChildText("Seo"),element.getChildText("Descripcion"),element.getChildText("Precio"),element.getChildText("Imagen"),element.getChildText("Categoria"),element.getChildText("Proveedor"),element.getChildText("Id"),element.getChildText("Estado"),element.getChildText("CantidadMinima"));
         return nProducto;
     }
     

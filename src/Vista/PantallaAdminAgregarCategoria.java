@@ -9,16 +9,20 @@ package Vista;
 import Vista.*;
 import Controlador.*;
 import Modelo.*;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import org.jdom.JDOMException;
 
-/**
- *
- * @author luis
- */
+import org.apache.log4j.BasicConfigurator;
+//import org.apache.log4j.Logger;
+
 public class PantallaAdminAgregarCategoria extends javax.swing.JFrame {
 
      private boolean resultado = false;
@@ -108,21 +112,43 @@ public class PantallaAdminAgregarCategoria extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
+       
+        BasicConfigurator.configure();
         Categoria cat = new Categoria(JTFNombre.getText(), JTFId.getText());
         resultado = datosCategoria.agregarCategoria(cat);
         datosCategoria.todasLasCategorias();
         
+       
+        if (JTFNombre.getText().isEmpty() || JTFId.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Por favor llene todos los campos", "Error al Agregar Categoria", JOptionPane.ERROR_MESSAGE);
+            
+                        //log4j
+                        Logger log = Logger.getLogger("Logger de Ejemplo");
+                        log.warning("error en el proceso de agregado");
+        }
+        
+        
+        
+        else{
         if (resultado == true) {
                         JOptionPane.showMessageDialog(null, "categoria agregada con exito!", "Operacion Exitosa", JOptionPane.INFORMATION_MESSAGE);
                         //limpia();
-                        PantallaAdminTablaCategorias table = new PantallaAdminTablaCategorias(new javax.swing.JFrame(), true, idaux);
-                        table.setVisible(true);
+                        java.awt.EventQueue.invokeLater(new Runnable() {
+                   
+                        public void run() {
+                        new PantallaAdminTablaCategorias(new javax.swing.JFrame(), true, idaux).setVisible(true);
+                        }
+                        });
+                        this.dispose();  
+
+                        //log4j
+                        Logger log = Logger.getLogger("Logger de Ejemplo");
+                        log.info("se agrego la categoria");
                     } else {
                         JOptionPane.showMessageDialog(null, "Operacion Fallida", "Error", JOptionPane.ERROR_MESSAGE);
-                    
+                        
                 }
-        
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

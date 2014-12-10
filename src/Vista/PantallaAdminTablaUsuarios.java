@@ -101,6 +101,7 @@ public class PantallaAdminTablaUsuarios extends javax.swing.JFrame {
         Table = new javax.swing.JTable();
         JBEliminarUsuario = new javax.swing.JButton();
         JBModficarUsuario = new javax.swing.JButton();
+        JBVolver = new javax.swing.JButton();
 
         JBAgregarUsuario.setText("Agregar ");
         JBAgregarUsuario.addActionListener(new java.awt.event.ActionListener() {
@@ -136,19 +137,26 @@ public class PantallaAdminTablaUsuarios extends javax.swing.JFrame {
             }
         });
 
+        JBVolver.setText("Volver");
+        JBVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBVolverActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 814, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(JBAgregarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(JBEliminarUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(JBModficarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(JBAgregarUsuario, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JBEliminarUsuario, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JBModficarUsuario, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JBVolver, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -156,14 +164,16 @@ public class PantallaAdminTablaUsuarios extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addComponent(JBAgregarUsuario)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(JBModficarUsuario)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(JBEliminarUsuario))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addComponent(JBVolver)
+                .addGap(19, 19, 19))
         );
 
         pack();
@@ -201,6 +211,7 @@ public class PantallaAdminTablaUsuarios extends javax.swing.JFrame {
 
     private void JBModficarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBModficarUsuarioActionPerformed
         
+         
         int filaSeleccionada = Table.getSelectedRow();//Obtengo la fila seleccionada
         String nombre, apellido, cedula, username, password, correo, direccion, fechaDeNacimiento, metodoDePago, FechaDeRegistro, rol, idUsuario, estadoUsuario;
         
@@ -238,6 +249,16 @@ public class PantallaAdminTablaUsuarios extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_JBModficarUsuarioActionPerformed
+
+    private void JBVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBVolverActionPerformed
+       java.awt.EventQueue.invokeLater(new Runnable() {
+                   
+                   public void run() {
+                   new PantallaInicial().setVisible(true);
+                   }
+                   });
+                   this.dispose();  
+    }//GEN-LAST:event_JBVolverActionPerformed
 
     /**
      * @param args the command line arguments
@@ -279,6 +300,7 @@ public class PantallaAdminTablaUsuarios extends javax.swing.JFrame {
     private javax.swing.JButton JBAgregarUsuario;
     private javax.swing.JButton JBEliminarUsuario;
     private javax.swing.JButton JBModficarUsuario;
+    private javax.swing.JButton JBVolver;
     private javax.swing.JTable Table;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables

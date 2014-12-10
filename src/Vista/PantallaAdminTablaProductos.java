@@ -31,6 +31,8 @@ public class PantallaAdminTablaProductos extends javax.swing.JFrame {
         modelo.addColumn("Descripcion");
         modelo.addColumn("Precio");
         modelo.addColumn("Imagen");
+        modelo.addColumn("Categoria");
+        modelo.addColumn("Proveedor");
         modelo.addColumn("Id");
         modelo.addColumn("Estado");
         modelo.addColumn("CantidadMinima");
@@ -70,7 +72,7 @@ public class PantallaAdminTablaProductos extends javax.swing.JFrame {
         
             
              if (pro != null) {
-               String[] row = {pro.getNombre(),pro.getSeo(),pro.getDescripcion(),pro.getPrecio(),pro.getImagen(),pro.getIdProducto(),pro.getEstadoProducto(),pro.getCantidadMinima()};
+               String[] row = {pro.getNombre(),pro.getSeo(),pro.getDescripcion(),pro.getPrecio(),pro.getImagen(),pro.getCategoria(),pro.getProveedor(),pro.getIdProducto(),pro.getEstadoProducto(),pro.getCantidadMinima()};
                modelo.addRow(row);
              }
             
@@ -94,8 +96,7 @@ public class PantallaAdminTablaProductos extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-
-        setPreferredSize(null);
+        JBVolver = new javax.swing.JButton();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -131,6 +132,13 @@ public class PantallaAdminTablaProductos extends javax.swing.JFrame {
             }
         });
 
+        JBVolver.setText("Volver");
+        JBVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBVolverActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -142,7 +150,8 @@ public class PantallaAdminTablaProductos extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 84, Short.MAX_VALUE)
                     .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(JBVolver, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(19, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -150,14 +159,16 @@ public class PantallaAdminTablaProductos extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addComponent(jButton3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(jButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(jButton1))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                .addComponent(JBVolver)
+                .addContainerGap())
         );
 
         pack();
@@ -172,23 +183,34 @@ public class PantallaAdminTablaProductos extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         
+        
+        
         int filaSeleccionada = jTable1.getSelectedRow();//Obtengo la fila seleccionada
-        String nombre,seo,descripcion,precio,imagen,id,estado,cantidadMinima;
+        String nombre,seo,descripcion,precio,imagen,categoria,proveedor,id,estado,cantidadMinima;
         //meto los valores de la fila seleccionada en las variables
+        
+        if (filaSeleccionada >= 0 ){
         nombre = jTable1.getValueAt(filaSeleccionada, 0).toString();
         seo = jTable1.getValueAt(filaSeleccionada, 1).toString();
         descripcion = jTable1.getValueAt(filaSeleccionada, 2).toString();
         precio = jTable1.getValueAt(filaSeleccionada, 3).toString();
         imagen = jTable1.getValueAt(filaSeleccionada, 4).toString();
-        id = jTable1.getValueAt(filaSeleccionada, 5).toString();
-        estado = jTable1.getValueAt(filaSeleccionada, 6).toString();
-        cantidadMinima = jTable1.getValueAt(filaSeleccionada, 7).toString();
+        categoria = jTable1.getValueAt(filaSeleccionada, 5).toString();
+        proveedor = jTable1.getValueAt(filaSeleccionada, 6).toString();
+        id = jTable1.getValueAt(filaSeleccionada, 7).toString();
+        estado = jTable1.getValueAt(filaSeleccionada, 8).toString();
+        cantidadMinima = jTable1.getValueAt(filaSeleccionada, 9).toString();
         
         //creo objeto producto
-        Producto pro = new Producto(nombre, seo, descripcion, precio, imagen, id, estado, cantidadMinima);
+        Producto pro = new Producto(nombre, seo, descripcion, precio, imagen, categoria, proveedor, id, estado, cantidadMinima);
         //abro la pantalla de modificar y le paso como parametro mi objeto
         PantallaAdminModificarProducto _PantallaModificarProducto = new PantallaAdminModificarProducto(pro);
         _PantallaModificarProducto.setVisible(true);
+        }else{
+        
+            JOptionPane.showMessageDialog(null, "No has seleccionado ningun producto");
+            
+        }
         
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -203,7 +225,7 @@ public class PantallaAdminTablaProductos extends javax.swing.JFrame {
         if (filaseleccionada >= 0){
         
             
-            idProductoSeleccionado = jTable1.getValueAt(filaseleccionada, 5).toString();
+            idProductoSeleccionado = jTable1.getValueAt(filaseleccionada, 7).toString();
             
             
             datosProducto.borrarProducto(idProductoSeleccionado);//Borro el producto con el id seleccionado
@@ -216,6 +238,16 @@ public class PantallaAdminTablaProductos extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void JBVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBVolverActionPerformed
+        java.awt.EventQueue.invokeLater(new Runnable() {
+                   
+                   public void run() {
+                   new PantallaInicial().setVisible(true);
+                   }
+                   });
+                   this.dispose();  
+    }//GEN-LAST:event_JBVolverActionPerformed
 
     /**
      * @param args the command line arguments
@@ -253,6 +285,7 @@ public class PantallaAdminTablaProductos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton JBVolver;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;

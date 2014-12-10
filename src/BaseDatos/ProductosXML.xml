@@ -1,22 +1,69 @@
 <root>
   <Producto>
-    <Nombre>Mitsubishi</Nombre>
-    <Seo>mitsu-01</Seo>
-    <Descripcion>lujoso</Descripcion>
-    <Precio>9999</Precio>
-    <Imagen>auto.jpg</Imagen>
+    <Nombre>Zapato Adidas</Nombre>
+    <Seo>adi-zap</Seo>
+    <Descripcion>adidas de correr</Descripcion>
+    <Precio>1200</Precio>
+    <Imagen>adi10.jpg</Imagen>
+    <Categoria>Tres</Categoria>
     <Id>1</Id>
-    <Estado>activo</Estado>
-    <CantidadMinima>15</CantidadMinima>
+    <Estado>1</Estado>
+    <CantidadMinima>1</CantidadMinima>
   </Producto>
   <Producto>
-    <Nombre>Zapato nike</Nombre>
-    <Seo>zap-nike</Seo>
-    <Descripcion>zapato de correr</Descripcion>
-    <Precio>123400</Precio>
-    <Imagen>zap.jpg</Imagen>
-    <Id>2</Id>
-    <Estado>1</Estado>
+    <Nombre>lancer</Nombre>
+    <Seo>lancer-carro</Seo>
+    <Descripcion>carro deportivo</Descripcion>
+    <Precio>200000</Precio>
+    <Imagen>lancer.jpg</Imagen>
+    <Categoria>Item 2</Categoria>
+    <Id>3</Id>
+    <Estado>activo</Estado>
+    <CantidadMinima>20</CantidadMinima>
+  </Producto>
+  <Producto>
+    <Nombre>mini-cooper</Nombre>
+    <Seo>mini-carro</Seo>
+    <Descripcion>carro pequeño</Descripcion>
+    <Precio>2000000</Precio>
+    <Imagen>mini.jpg</Imagen>
+    <Categoria>Item 3</Categoria>
+    <Id>10</Id>
+    <Estado>inactivo</Estado>
+    <CantidadMinima>12</CantidadMinima>
+  </Producto>
+  <Producto>
+    <Nombre>Hummer</Nombre>
+    <Seo>----</Seo>
+    <Descripcion>camioneta</Descripcion>
+    <Precio>900000</Precio>
+    <Imagen>hummer.jpg</Imagen>
+    <Categoria>autos</Categoria>
+    <Id>44</Id>
+    <Estado>inactivo</Estado>
+    <CantidadMinima>99</CantidadMinima>
+  </Producto>
+  <Producto>
+    <Nombre>asf</Nombre>
+    <Seo>ffasf</Seo>
+    <Descripcion>fsdfksdj</Descripcion>
+    <Precio>sdfs</Precio>
+    <Imagen>fsfsd</Imagen>
+    <Categoria>fsdsdffsdfs</Categoria>
+    <Id>sfdf</Id>
+    <Estado>sfdfdsfsdsdf</Estado>
+    <CantidadMinima>dsfsdf</CantidadMinima>
+  </Producto>
+  <Producto>
+    <Nombre>Vaso</Nombre>
+    <Seo>contigo-vaso</Seo>
+    <Descripcion>vaso contigo</Descripcion>
+    <Precio>1200</Precio>
+    <Imagen>vaso.jpg</Imagen>
+    <Categoria>vasos</Categoria>
+    <Proveedor>luis</Proveedor>
+    <Id>56</Id>
+    <Estado>activo</Estado>
     <CantidadMinima>20</CantidadMinima>
   </Producto>
 </root>

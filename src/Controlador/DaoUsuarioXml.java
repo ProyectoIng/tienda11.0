@@ -164,6 +164,23 @@ public class DaoUsuarioXml {
         return null;
     }
     
+    public static Element buscarPorUsername(List raiz, String dato) {
+        Iterator i = raiz.iterator();
+        while (i.hasNext()) {
+            Element e = (Element) i.next();
+            if (dato.equals(e.getChild("Username").getText())) {
+                System.out.println("encontre");
+                return e;
+            }
+        }
+        return null;
+    }
+    
+    //Esto es lo que uso para iniciar sesion
+     
+ 
+     
+     
     public Usuario buscarUsuario(String Identificador) {
         Element aux = new Element("Usuario");
         List Usuarios = this.root.getChildren();
@@ -179,6 +196,23 @@ public class DaoUsuarioXml {
         }
         return null;
     }
+    
+       public Usuario buscarUsername(String Username) {
+        Element aux = new Element("Username");
+        List Usuarios = this.root.getChildren();
+        while (aux != null) {
+            aux = DaoUsuarioXml.buscarPorUsername(Usuarios,Username);
+            if (aux != null) {
+                try {
+                    return UsuarioToObject(aux);
+                } catch (ParseException ex) {
+                    System.out.println(ex.getMessage());
+                }
+            }
+        }
+        return null;
+    }
+
     
     public ArrayList<Usuario> todosLosUsuarios() {
         ArrayList<Usuario> resultado = new ArrayList<Usuario>();

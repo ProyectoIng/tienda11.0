@@ -14,16 +14,20 @@ public class Producto {
     private String descripcion;
     private String precio;
     private String imagen;
+    private String categoria;
+    private String proveedor;
     private String idProducto;
     private String estadoProducto;
     private String cantidadMinima;
 
-    public Producto(String nombre, String seo, String descripcion, String precio, String imagen, String idProducto, String estadoProducto, String cantidadMinima) {
+    public Producto(String nombre, String seo, String descripcion, String precio, String imagen, String categoria, String proveedor, String idProducto, String estadoProducto, String cantidadMinima) {
         this.nombre = nombre;
         this.seo = seo;
         this.descripcion = descripcion;
         this.precio = precio;
         this.imagen = imagen;
+        this.categoria = categoria;
+        this.proveedor = proveedor;
         this.idProducto = idProducto;
         this.estadoProducto = estadoProducto;
         this.cantidadMinima = cantidadMinima;
@@ -69,6 +73,22 @@ public class Producto {
         this.imagen = imagen;
     }
 
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+
+    public String getProveedor() {
+        return proveedor;
+    }
+
+    public void setProveedor(String proveedor) {
+        this.proveedor = proveedor;
+    }
+
     public String getIdProducto() {
         return idProducto;
     }
@@ -93,6 +113,11 @@ public class Producto {
         this.cantidadMinima = cantidadMinima;
     }
 
+   
+    
+    
+
+    
     
 
     

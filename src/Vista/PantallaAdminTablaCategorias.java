@@ -17,6 +17,8 @@ import javax.swing.JLayeredPane;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+import org.apache.log4j.BasicConfigurator;
+import org.apache.log4j.Logger;
 
 /**
  *
@@ -28,7 +30,7 @@ public class PantallaAdminTablaCategorias extends javax.swing.JFrame {
      private boolean resultado = false;
      static String idaux;
      DaoCategoriaXml datosCategoria = new DaoCategoriaXml();//Creo objeto del controlador Categoria
-    
+     
     public PantallaAdminTablaCategorias(java.awt.Frame parent, boolean modal,String id) {
         initComponents();
         modelo = new DefaultTableModel();
@@ -63,12 +65,7 @@ public class PantallaAdminTablaCategorias extends javax.swing.JFrame {
 
         for (Categoria cat : Lista)
         {
-           
-        
-            System.out.println("El id es: "+cat.getIdCategoria());
-        
-        
-            
+          
              if (cat != null) {
                String[] row = {cat.getNombre(),cat.getIdCategoria()};
                modelo.addRow(row);
@@ -93,6 +90,7 @@ public class PantallaAdminTablaCategorias extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        JBVolver = new javax.swing.JButton();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -128,6 +126,13 @@ public class PantallaAdminTablaCategorias extends javax.swing.JFrame {
             }
         });
 
+        JBVolver.setText("Volver");
+        JBVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBVolverActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -137,9 +142,11 @@ public class PantallaAdminTablaCategorias extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 478, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(JBVolver, javax.swing.GroupLayout.DEFAULT_SIZE, 84, Short.MAX_VALUE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 84, Short.MAX_VALUE)))
                 .addGap(0, 32, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -147,14 +154,16 @@ public class PantallaAdminTablaCategorias extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addComponent(jButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(jButton3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(jButton2))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                .addComponent(JBVolver)
+                .addContainerGap())
         );
 
         pack();
@@ -187,9 +196,14 @@ public class PantallaAdminTablaCategorias extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        java.awt.EventQueue.invokeLater(new Runnable() {
+                   
+                   public void run() {
+                   new PantallaAdminAgregarCategoria().setVisible(true);
+                   }
+                   });
+                   this.dispose();  
         
-        PantallaAdminAgregarCategoria _PantallaAdminAgregarCategoria = new PantallaAdminAgregarCategoria();
-        _PantallaAdminAgregarCategoria.setVisible(true);
                 
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -198,6 +212,8 @@ public class PantallaAdminTablaCategorias extends javax.swing.JFrame {
         int filaSeleccionada = jTable1.getSelectedRow();//Obtengo la fila seleccionada
         String nombre,id;
         //meto los valores de la fila seleccionada en las variables
+        
+        if (filaSeleccionada >= 0 ){
         nombre = jTable1.getValueAt(filaSeleccionada, 0).toString();
         id = jTable1.getValueAt(filaSeleccionada, 1).toString();
         //creo objeto 
@@ -205,8 +221,23 @@ public class PantallaAdminTablaCategorias extends javax.swing.JFrame {
         //abro la pantalla de modificar y le paso como parametro mi objeto
         PantallaAdminModificarCategoria _PantallaModificarCategoria = new PantallaAdminModificarCategoria(cat);
         _PantallaModificarCategoria.setVisible(true);
+        }else{
+        
+            JOptionPane.showMessageDialog(null, "No has seleccionado ninguna categoría");
+            
+        }
         
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void JBVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBVolverActionPerformed
+        java.awt.EventQueue.invokeLater(new Runnable() {
+                   
+                   public void run() {
+                   new PantallaInicial().setVisible(true);
+                   }
+                   });
+                   this.dispose();  
+    }//GEN-LAST:event_JBVolverActionPerformed
 
     /**
      * @param args the command line arguments
@@ -244,6 +275,7 @@ public class PantallaAdminTablaCategorias extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton JBVolver;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;

@@ -29,4 +29,19 @@
     <Id>2</Id>
     <EstadoDeUsuario>activo</EstadoDeUsuario>
   </Usuario>
+  <Usuario>
+    <Nombre>luis</Nombre>
+    <Apellido>Gamez</Apellido>
+    <Cedula>23710750</Cedula>
+    <Username>luis</Username>
+    <Password>luis</Password>
+    <Correo>lglink777@gmail.com</Correo>
+    <DireccionFisica>los teques</DireccionFisica>
+    <FechaDeNacimiento>11/10/94</FechaDeNacimiento>
+    <MetodoDePago>afngg</MetodoDePago>
+    <FechaDeRegistro>31323</FechaDeRegistro>
+    <Rol>egwgrg</Rol>
+    <Id>1234</Id>
+    <EstadoDeUsuario>gewgwg</EstadoDeUsuario>
+  </Usuario>
 </root>
