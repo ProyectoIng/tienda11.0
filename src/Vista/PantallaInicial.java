@@ -74,6 +74,11 @@ public class PantallaInicial extends javax.swing.JFrame {
         });
 
         jButton4.setText("Volver");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -145,6 +150,16 @@ public class PantallaInicial extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+     java.awt.EventQueue.invokeLater(new Runnable() {
+                   
+                   public void run() {
+                   new PantallaIniciarSesion().setVisible(true);
+                   }
+                   });
+                   this.dispose();  
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments

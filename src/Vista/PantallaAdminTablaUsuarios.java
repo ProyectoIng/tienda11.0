@@ -68,7 +68,7 @@ public class PantallaAdminTablaUsuarios extends javax.swing.JFrame {
         {
            
         
-            System.out.println("El id es: "+usu.getIdUsuario());
+            
         
         
             

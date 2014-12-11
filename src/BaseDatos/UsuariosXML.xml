@@ -1,5 +1,20 @@
 <root>
   <Usuario>
+    <Nombre>luis</Nombre>
+    <Apellido>Gamez</Apellido>
+    <Cedula>23710750</Cedula>
+    <Username>luis</Username>
+    <Password>luis</Password>
+    <Correo>lglink777@gmail.com</Correo>
+    <DireccionFisica>los teques</DireccionFisica>
+    <FechaDeNacimiento>11/10/94</FechaDeNacimiento>
+    <MetodoDePago>afngg</MetodoDePago>
+    <FechaDeRegistro>31323</FechaDeRegistro>
+    <Rol>egwgrg</Rol>
+    <Id>1234</Id>
+    <EstadoDeUsuario>gewgwg</EstadoDeUsuario>
+  </Usuario>
+  <Usuario>
     <Nombre>Luis</Nombre>
     <Apellido>García</Apellido>
     <Cedula>12345678</Cedula>
@@ -13,6 +28,36 @@
     <Rol>admin</Rol>
     <Id>1</Id>
     <EstadoDeUsuario>activo</EstadoDeUsuario>
+  </Usuario>
+  <Usuario>
+    <Nombre>2312</Nombre>
+    <Apellido>123</Apellido>
+    <Cedula>123</Cedula>
+    <Username>123</Username>
+    <Password>213</Password>
+    <Correo>3123</Correo>
+    <DireccionFisica>213</DireccionFisica>
+    <FechaDeNacimiento>123</FechaDeNacimiento>
+    <MetodoDePago>13123</MetodoDePago>
+    <FechaDeRegistro>12312</FechaDeRegistro>
+    <Rol>123</Rol>
+    <Id>123</Id>
+    <EstadoDeUsuario>11</EstadoDeUsuario>
+  </Usuario>
+  <Usuario>
+    <Nombre />
+    <Apellido />
+    <Cedula />
+    <Username />
+    <Password />
+    <Correo />
+    <DireccionFisica />
+    <FechaDeNacimiento />
+    <MetodoDePago />
+    <FechaDeRegistro />
+    <Rol />
+    <Id />
+    <EstadoDeUsuario />
   </Usuario>
   <Usuario>
     <Nombre>Juan</Nombre>
@@ -30,18 +75,63 @@
     <EstadoDeUsuario>activo</EstadoDeUsuario>
   </Usuario>
   <Usuario>
-    <Nombre>luis</Nombre>
-    <Apellido>Gamez</Apellido>
-    <Cedula>23710750</Cedula>
-    <Username>luis</Username>
-    <Password>luis</Password>
-    <Correo>lglink777@gmail.com</Correo>
-    <DireccionFisica>los teques</DireccionFisica>
-    <FechaDeNacimiento>11/10/94</FechaDeNacimiento>
-    <MetodoDePago>afngg</MetodoDePago>
-    <FechaDeRegistro>31323</FechaDeRegistro>
-    <Rol>egwgrg</Rol>
-    <Id>1234</Id>
-    <EstadoDeUsuario>gewgwg</EstadoDeUsuario>
+    <Nombre>hu</Nombre>
+    <Apellido>huh</Apellido>
+    <Cedula>uh</Cedula>
+    <Username>uhu</Username>
+    <Password>ihuh</Password>
+    <Correo>huh</Correo>
+    <DireccionFisica>iuh</DireccionFisica>
+    <FechaDeNacimiento>uih</FechaDeNacimiento>
+    <MetodoDePago>h</MetodoDePago>
+    <FechaDeRegistro>iuh</FechaDeRegistro>
+    <Rol>iuu</Rol>
+    <Id>1</Id>
+    <EstadoDeUsuario>uh</EstadoDeUsuario>
+  </Usuario>
+  <Usuario>
+    <Nombre>hu</Nombre>
+    <Apellido>hiuh</Apellido>
+    <Cedula>uih</Cedula>
+    <Username>uh</Username>
+    <Password>uih</Password>
+    <Correo>iuh</Correo>
+    <DireccionFisica>ui</DireccionFisica>
+    <FechaDeNacimiento>hiu</FechaDeNacimiento>
+    <MetodoDePago>hiu</MetodoDePago>
+    <FechaDeRegistro>erw</FechaDeRegistro>
+    <Rol>huih</Rol>
+    <Id>1</Id>
+    <EstadoDeUsuario>g</EstadoDeUsuario>
+  </Usuario>
+  <Usuario>
+    <Nombre>yt</Nombre>
+    <Apellido>y</Apellido>
+    <Cedula>tyt</Cedula>
+    <Username>yt</Username>
+    <Password>ut</Password>
+    <Correo>uyt</Correo>
+    <DireccionFisica>uyt</DireccionFisica>
+    <FechaDeNacimiento>y</FechaDeNacimiento>
+    <MetodoDePago>tuyt</MetodoDePago>
+    <FechaDeRegistro>yt</FechaDeRegistro>
+    <Rol>yt</Rol>
+    <Id>ytuytuytuytuy</Id>
+    <EstadoDeUsuario>yt</EstadoDeUsuario>
+  </Usuario>
+  <Usuario>
+    <Nombre>yt</Nombre>
+    <Apellido>y</Apellido>
+    <Cedula>tyt</Cedula>
+    <Username>yt</Username>
+    <Password>ut</Password>
+    <Correo>uyt</Correo>
+    <DireccionFisica>uyt</DireccionFisica>
+    <FechaDeNacimiento>y</FechaDeNacimiento>
+    <MetodoDePago>tuyt</MetodoDePago>
+    <FechaDeRegistro>yt</FechaDeRegistro>
+    <Rol>yt</Rol>
+    <Id>ytuytuytuytuy</Id>
+    <EstadoDeUsuario>yt</EstadoDeUsuario>
   </Usuario>
 </root>

@@ -3,6 +3,7 @@
 package Vista;
 import Controlador.*;
 import Modelo.Usuario;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
@@ -14,6 +15,7 @@ public class PantallaAdminAgregarUsuario extends javax.swing.JFrame {
     DaoUsuarioXml datosUsuario = new DaoUsuarioXml();//Creo el objeto de datosUsuario para insertar el usuario en el xml
     private boolean resultado = false;//un boolean para obtener un resultado de ingreso del usuario
     static private String idaux;//Auxiliar del id del usuario
+    private boolean rexiste = false;
 
     public PantallaAdminAgregarUsuario() {
         initComponents();
@@ -269,18 +271,29 @@ public class PantallaAdminAgregarUsuario extends javax.swing.JFrame {
         Usuario user = new Usuario(nombre, apellido, cedula, username, password, correo, direccionFisica, fechaDeNacimiento, metodoDePago, fechaDeRegistro, rol, idUsuario, estadoUsuario);
         resultado = datosUsuario.agregarUsuario(user);//Llamo a la funcion agregar dentro del daousuario
         datosUsuario.todosLosUsuarios();//muestro todos los usuarios
-        
+        if(JTFNombre.getText().isEmpty() || JTFApellido.getText().isEmpty() || JTFCedula.getText().isEmpty() || JTFUsername.getText().isEmpty() || JTFPassword.getText().isEmpty() || JTFCorreo.getText().isEmpty() || JTFDireccion.getText().isEmpty()   || JTFFechaNacimiento.getText().isEmpty() ||  JTFMetodoDePago.getText().isEmpty() || JTFFechaRegistro.getText().isEmpty() || JTFRol.getText().isEmpty() || JTFIdUsuario.getText().isEmpty() || JTFEstadoUsuario.getText().isEmpty()){
+        JOptionPane.showMessageDialog(null, "Por favor llene todos los campos", "Error al Agregar Categoria", JOptionPane.ERROR_MESSAGE);
+            
+                        //log4j
+                        Logger log = Logger.getLogger("Logger de Ejemplo");
+                        log.warning("error en el proceso de agregado");
+        }
+        else{
+            
         if (resultado == true) {
                         JOptionPane.showMessageDialog(null, "Usuario agregado con exito!", "Operacion Exitosa", JOptionPane.INFORMATION_MESSAGE);
                         //limpia();
                         PantallaAdminTablaUsuarios table = new PantallaAdminTablaUsuarios(new javax.swing.JFrame(), true, idaux);
                         table.setVisible(true);
+                         //log4j
+                        Logger log = Logger.getLogger("Logger de Ejemplo");
+                        log.info("usuario añadido satisfactoriamente");
                     } else {
                         JOptionPane.showMessageDialog(null, "Operacion Fallida", "Error", JOptionPane.ERROR_MESSAGE);
                     
                 }
-        
-        
+            
+        }
         
     }//GEN-LAST:event_JBAgregarUsuarioActionPerformed
 

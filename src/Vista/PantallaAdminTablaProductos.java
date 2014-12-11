@@ -6,12 +6,14 @@ import Modelo.Producto;
 import Modelo.Usuario;
 import static Vista.PantallaAdminTablaUsuarios.idaux;
 import java.util.ArrayList;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+import org.apache.log4j.BasicConfigurator;
 
 
 public class PantallaAdminTablaProductos extends javax.swing.JFrame {
@@ -67,7 +69,7 @@ public class PantallaAdminTablaProductos extends javax.swing.JFrame {
         {
            
         
-            System.out.println("El id es: "+pro.getIdProducto());
+            
         
         
             
@@ -184,7 +186,7 @@ public class PantallaAdminTablaProductos extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         
         
-        
+        BasicConfigurator.configure();
         int filaSeleccionada = jTable1.getSelectedRow();//Obtengo la fila seleccionada
         String nombre,seo,descripcion,precio,imagen,categoria,proveedor,id,estado,cantidadMinima;
         //meto los valores de la fila seleccionada en las variables
@@ -206,10 +208,15 @@ public class PantallaAdminTablaProductos extends javax.swing.JFrame {
         //abro la pantalla de modificar y le paso como parametro mi objeto
         PantallaAdminModificarProducto _PantallaModificarProducto = new PantallaAdminModificarProducto(pro);
         _PantallaModificarProducto.setVisible(true);
+         //log4j
+        Logger log = Logger.getLogger("Logger de Ejemplo");
+        log.info("admin producto satisfactorio");
         }else{
         
             JOptionPane.showMessageDialog(null, "No has seleccionado ningun producto");
-            
+          //log4j
+           Logger log = Logger.getLogger("Logger de Ejemplo");
+            log.warning("error no se encontro ninguna seleccion");   
         }
         
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -230,11 +237,15 @@ public class PantallaAdminTablaProductos extends javax.swing.JFrame {
             
             datosProducto.borrarProducto(idProductoSeleccionado);//Borro el producto con el id seleccionado
             modelo.removeRow(filaseleccionada);
-            
+             //log4j
+            Logger log = Logger.getLogger("Logger de Ejemplo");
+            log.info("el objeto se ha eliminado");
             
         }else{
             JOptionPane.showMessageDialog(null, "Tabla vacía o no seleccionó fila");
-        
+             //log4j
+            Logger log = Logger.getLogger("Logger de Ejemplo");
+            log.warning("error no se pudo eliminar");
         }
         
     }//GEN-LAST:event_jButton1ActionPerformed
