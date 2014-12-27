@@ -81,6 +81,10 @@ public class PantallaModificarUsuario extends javax.swing.JFrame {
         JTFPassword = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         JTFApellido = new javax.swing.JTextField();
+        jPanel7 = new javax.swing.JPanel();
+        jTextField6 = new javax.swing.JTextField();
+        Logo5 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
 
         jLabel5.setText("Correo");
 
@@ -215,24 +219,74 @@ public class PantallaModificarUsuario extends javax.swing.JFrame {
                     .addComponent(jLabel5))
                 .addGap(18, 18, 18)
                 .addComponent(JBModificarUsuario)
-                .addContainerGap(67, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
+        );
+
+        jPanel7.setBackground(new java.awt.Color(255, 255, 255));
+
+        jTextField6.setText("   ");
+
+        Logo5.setIcon(new javax.swing.ImageIcon("C:\\Documents and Settings\\luis\\Escritorio\\icon-onlineStore_opt (1).jpg")); // NOI18N
+        Logo5.setText("                      ");
+        Logo5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Logo5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Logo5MouseClicked(evt);
+            }
+        });
+
+        jLabel11.setText("Salir");
+        jLabel11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel11MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addComponent(Logo5, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(53, 53, 53)
+                .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(118, 118, 118)
+                .addComponent(jLabel11)
+                .addContainerGap(164, Short.MAX_VALUE))
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Logo5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextField6)
+                            .addComponent(jLabel11))))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(31, Short.MAX_VALUE)
+            .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(23, 23, 23)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(46, 46, 46)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         pack();
@@ -252,13 +306,14 @@ public class PantallaModificarUsuario extends javax.swing.JFrame {
         
         //procedo a modificar los datos tanto en la tabla como en el archivo
         
-        resultado = datosUsuario.actualizarUsuario(usuario);
+        Usuario usu = new Usuario(JTFNombre.getText(), JTFApellido.getText(), JTFCedula.getText(), JTFUser.getText(), JTFPassword.getText(), JTFCorreo.getText(),JTFDireccion.getText(), JTFFechaNacimiento.getText(), JTFMetodoDePago.getText(), JTFFechaRegistro.getText(),usuario.getRol(), usuario.getIdUsuario(),usuario.getEstadoUsuario());
+        resultado = datosUsuario.actualizarUsuario(usu);
         datosUsuario.todosLosUsuarios();
         
                 if (resultado == true) {
                         JOptionPane.showMessageDialog(null, "Usuario modificado con exito!", "Operacion Exitosa", JOptionPane.INFORMATION_MESSAGE);
                         //limpia();
-                        PantallaInicialCompradorUsuario table = new PantallaInicialCompradorUsuario(usuario);
+                        PantallaInicialCompradorUsuario table = new PantallaInicialCompradorUsuario(usu);
                         table.setVisible(true);
                     } else {
                         JOptionPane.showMessageDialog(null, "Operacion Fallida", "Error", JOptionPane.ERROR_MESSAGE);
@@ -274,6 +329,29 @@ public class PantallaModificarUsuario extends javax.swing.JFrame {
     private void JTFDireccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFDireccionActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_JTFDireccionActionPerformed
+
+    private void Logo5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Logo5MouseClicked
+        // TODO add your handling code here:
+
+        java.awt.EventQueue.invokeLater(new Runnable() {
+
+            public void run() {
+                new PantallaInicialComprador(usuario).setVisible(true);
+            }
+        });
+        this.dispose();
+    }//GEN-LAST:event_Logo5MouseClicked
+
+    private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
+
+        java.awt.EventQueue.invokeLater(new Runnable() {
+
+            public void run() {
+                new PantallaInicialComprador(null).setVisible(true);
+            }
+        });
+        this.dispose();
+    }//GEN-LAST:event_jLabel11MouseClicked
 
     /**
      * @param args the command line arguments
@@ -324,8 +402,14 @@ public class PantallaModificarUsuario extends javax.swing.JFrame {
     private javax.swing.JTextField JTFNombre;
     private javax.swing.JTextField JTFPassword;
     private javax.swing.JTextField JTFUser;
+    private javax.swing.JLabel Logo1;
+    private javax.swing.JLabel Logo2;
+    private javax.swing.JLabel Logo3;
+    private javax.swing.JLabel Logo4;
+    private javax.swing.JLabel Logo5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -335,5 +419,15 @@ public class PantallaModificarUsuario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
     // End of variables declaration//GEN-END:variables
 }

@@ -15,4 +15,20 @@
     <Nombre>harina</Nombre>
     <Id>6</Id>
   </Categoria>
+  <Categoria>
+    <Nombre>carros</Nombre>
+    <Id>7</Id>
+  </Categoria>
+  <Categoria>
+    <Nombre>lanchas</Nombre>
+    <Id>8</Id>
+  </Categoria>
+  <Categoria>
+    <Nombre>aviones</Nombre>
+    <Id>9</Id>
+  </Categoria>
+  <Categoria>
+    <Nombre>gatos</Nombre>
+    <Id>10</Id>
+  </Categoria>
 </root>

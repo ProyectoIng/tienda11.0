@@ -8,6 +8,8 @@ package Vista;
 
 import Controlador.*;
 import Modelo.*;
+import com.toedter.calendar.JDateChooser;
+import java.util.Calendar;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;

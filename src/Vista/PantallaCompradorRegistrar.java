@@ -60,9 +60,6 @@ public class PantallaCompradorRegistrar extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        Logo = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         JTFCorreo = new javax.swing.JTextField();
         JTFPassword = new javax.swing.JTextField();
@@ -87,47 +84,13 @@ public class PantallaCompradorRegistrar extends javax.swing.JFrame {
         JLBID = new javax.swing.JLabel();
         jDFechaNacimiento = new com.toedter.calendar.JDateChooser();
         jDFechaRegistro = new com.toedter.calendar.JDateChooser();
+        jPanel7 = new javax.swing.JPanel();
+        jTextField6 = new javax.swing.JTextField();
+        Logo5 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jPanel1.setBackground(new java.awt.Color(0, 102, 204));
-
-        Logo.setText("                      ");
-        Logo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Logo.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                LogoMouseClicked(evt);
-            }
-        });
-
-        jLabel2.setText("Ingresa");
-        jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel2MouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(49, 49, 49)
-                .addComponent(Logo, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(413, 413, 413)
-                .addComponent(jLabel2)
-                .addContainerGap(67, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Logo)
-                    .addComponent(jLabel2))
-                .addContainerGap())
-        );
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -270,39 +233,85 @@ public class PantallaCompradorRegistrar extends javax.swing.JFrame {
                     .addComponent(JLBId, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
+        jPanel7.setBackground(new java.awt.Color(255, 255, 255));
+
+        jTextField6.setText("   ");
+
+        Logo5.setIcon(new javax.swing.ImageIcon("C:\\Documents and Settings\\luis\\Escritorio\\icon-onlineStore_opt (1).jpg")); // NOI18N
+        Logo5.setText("                      ");
+        Logo5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Logo5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Logo5MouseClicked(evt);
+            }
+        });
+
+        jLabel11.setText("Salir");
+        jLabel11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel11MouseClicked(evt);
+            }
+        });
+
+        jLabel1.setText("Ingresa");
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addComponent(Logo5, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(53, 53, 53)
+                .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addComponent(jLabel11)
+                .addContainerGap(83, Short.MAX_VALUE))
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Logo5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextField6)
+                            .addComponent(jLabel11)
+                            .addComponent(jLabel1))))
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(26, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(24, 24, 24))
+            .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21))
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-
-        java.awt.EventQueue.invokeLater(new Runnable() {
-
-            public void run() {
-                new PantallaIngresar().setVisible(true);
-            }
-        });
-        this.dispose();
-
-    }//GEN-LAST:event_jLabel2MouseClicked
 
     private void JTFPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFPasswordActionPerformed
         // TODO add your handling code here:
@@ -378,17 +387,40 @@ public class PantallaCompradorRegistrar extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_JBAgregarUsuarioActionPerformed
 
-    private void LogoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogoMouseClicked
+    private void Logo5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Logo5MouseClicked
+        // TODO add your handling code here:
+
+        java.awt.EventQueue.invokeLater(new Runnable() {
+
+            public void run() {
+                new PantallaInicialComprador(usuario).setVisible(true);
+            }
+        });
+        this.dispose();
+    }//GEN-LAST:event_Logo5MouseClicked
+
+    private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
+
+        java.awt.EventQueue.invokeLater(new Runnable() {
+
+            public void run() {
+                new PantallaInicialComprador(null).setVisible(true);
+            }
+        });
+        this.dispose();
+    }//GEN-LAST:event_jLabel11MouseClicked
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
         // TODO add your handling code here:
         
         java.awt.EventQueue.invokeLater(new Runnable() {
                    
                    public void run() {
-                   new PantallaInicialComprador(usuario).setVisible(true);
+                   new PantallaIngresar().setVisible(true);
                    }
                    });
                    this.dispose(); 
-    }//GEN-LAST:event_LogoMouseClicked
+    }//GEN-LAST:event_jLabel1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -437,12 +469,16 @@ public class PantallaCompradorRegistrar extends javax.swing.JFrame {
     private javax.swing.JTextField JTFNombre;
     private javax.swing.JTextField JTFPassword;
     private javax.swing.JTextField JTFUsername;
-    private javax.swing.JLabel Logo;
+    private javax.swing.JLabel Logo5;
     private com.toedter.calendar.JDateChooser jDFechaNacimiento;
     private com.toedter.calendar.JDateChooser jDFechaRegistro;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -451,7 +487,8 @@ public class PantallaCompradorRegistrar extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JTextField jTextField6;
     // End of variables declaration//GEN-END:variables
 }

@@ -60,15 +60,23 @@
                       <Component id="JTFCedula" alignment="0" min="-2" pref="91" max="-2" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="JTFPassword" max="32767" attributes="0"/>
+                              <Component id="JTFPassword" pref="91" max="32767" attributes="0"/>
                               <Component id="JTFApellido" alignment="0" max="32767" attributes="0"/>
                               <Component id="JTFUsername" alignment="0" max="32767" attributes="0"/>
-                              <Component id="JTFNombre" alignment="0" pref="91" max="32767" attributes="0"/>
                               <Component id="JTFCorreo" alignment="0" max="32767" attributes="0"/>
+                              <Component id="JTFNombre" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="JBAgregarUsuario" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="JBAgregarUsuario" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <EmptySpace min="-2" pref="143" max="-2" attributes="0"/>
+                                      <Component id="jLabel12" max="32767" attributes="0"/>
+                                      <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                                      <Component id="JLBId" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
@@ -79,25 +87,21 @@
                                       <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="JTFFechaRegistro" max="32767" attributes="0"/>
-                                      <Component id="JTFMetodoDePago" max="32767" attributes="0"/>
-                                      <Component id="JTFFechaNacimiento" max="32767" attributes="0"/>
-                                      <Component id="jComboBox1" alignment="1" pref="91" max="32767" attributes="0"/>
-                                      <Component id="JTFDireccion" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jComboBox2" alignment="0" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="JTFMetodoDePago" max="32767" attributes="0"/>
+                                          <Component id="jComboBox1" alignment="1" max="32767" attributes="0"/>
+                                          <Component id="jComboBox2" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="JTFDireccion" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jDFechaNacimiento" alignment="0" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Component id="jDFechaRegistro" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace min="-2" pref="143" max="-2" attributes="0"/>
-                                  <Component id="jLabel12" max="32767" attributes="0"/>
-                                  <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
-                                  <Component id="JLBId" pref="42" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -111,12 +115,14 @@
                       <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="JTFDireccion" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="JTFApellido" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="JTFFechaNacimiento" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="JTFApellido" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="jDFechaNacimiento" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -126,13 +132,15 @@
                       <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="JTFUsername" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="JTFFechaRegistro" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="JTFUsername" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="jDFechaRegistro" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="JTFPassword" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -244,15 +252,14 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="JTFDireccion">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JTFDireccionActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel13">
           <Properties>
             <Property name="text" type="java.lang.String" value="Estado de Usuario"/>
           </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="JTFFechaRegistro">
-        </Component>
-        <Component class="javax.swing.JTextField" name="JTFFechaNacimiento">
         </Component>
         <Component class="javax.swing.JTextField" name="JTFMetodoDePago">
         </Component>
@@ -282,6 +289,10 @@
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JComboBox()"/>
           </AuxValues>
+        </Component>
+        <Component class="com.toedter.calendar.JDateChooser" name="jDFechaNacimiento">
+        </Component>
+        <Component class="com.toedter.calendar.JDateChooser" name="jDFechaRegistro">
         </Component>
       </SubComponents>
     </Container>

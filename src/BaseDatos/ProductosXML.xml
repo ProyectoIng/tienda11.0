@@ -12,18 +12,6 @@
     <CantidadActual />
   </Producto>
   <Producto>
-    <Nombre>apartamento</Nombre>
-    <Descripcion>la lagunita</Descripcion>
-    <Precio>999999965</Precio>
-    <Imagen>C:\Documents and Settings\luis\Escritorio\virtuemart-logo.jpg</Imagen>
-    <Categoria>apartamentos</Categoria>
-    <Proveedor>la lacra</Proveedor>
-    <Id>3</Id>
-    <Estado>Activo</Estado>
-    <CantidadMinima>12</CantidadMinima>
-    <CantidadActual />
-  </Producto>
-  <Producto>
     <Nombre>haripan</Nombre>
     <Descripcion>apn</Descripcion>
     <Precio>1200</Precio>
@@ -33,6 +21,18 @@
     <Id>4</Id>
     <Estado>Activo</Estado>
     <CantidadMinima>12</CantidadMinima>
+    <CantidadActual />
+  </Producto>
+  <Producto>
+    <Nombre>carro</Nombre>
+    <Descripcion>auto</Descripcion>
+    <Precio>23333</Precio>
+    <Imagen>C:\Documents and Settings\luis\Escritorio\result (1).jpg</Imagen>
+    <Categoria>Electrónicos</Categoria>
+    <Proveedor>carrero</Proveedor>
+    <Id>5</Id>
+    <Estado>Inactivo</Estado>
+    <CantidadMinima>1212</CantidadMinima>
     <CantidadActual />
   </Producto>
 </root>

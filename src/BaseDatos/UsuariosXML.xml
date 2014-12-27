@@ -45,18 +45,63 @@
     <EstadoDeUsuario>Activo</EstadoDeUsuario>
   </Usuario>
   <Usuario>
-    <Nombre>k</Nombre>
+    <Nombre>g</Nombre>
+    <Apellido>g</Apellido>
+    <Cedula>g</Cedula>
+    <Username>g</Username>
+    <Password>g</Password>
+    <Correo>g</Correo>
+    <DireccionFisica>g</DireccionFisica>
+    <FechaDeNacimiento>g</FechaDeNacimiento>
+    <MetodoDePago>g</MetodoDePago>
+    <FechaDeRegistro>g</FechaDeRegistro>
+    <Rol>Inventario</Rol>
+    <Id>13</Id>
+    <EstadoDeUsuario>Activo</EstadoDeUsuario>
+  </Usuario>
+  <Usuario>
+    <Nombre>pepe</Nombre>
+    <Apellido>pepe</Apellido>
+    <Cedula>pepe</Cedula>
+    <Username>pepe</Username>
+    <Password>pepe</Password>
+    <Correo>pepe</Correo>
+    <DireccionFisica>pepe</DireccionFisica>
+    <FechaDeNacimiento>11/5/2008</FechaDeNacimiento>
+    <MetodoDePago>pepe</MetodoDePago>
+    <FechaDeRegistro>11/11/2014</FechaDeRegistro>
+    <Rol>Inventario</Rol>
+    <Id>14</Id>
+    <EstadoDeUsuario>Inactivo</EstadoDeUsuario>
+  </Usuario>
+  <Usuario>
+    <Nombre>qw</Nombre>
     <Apellido>k</Apellido>
     <Cedula>k</Cedula>
     <Username>k</Username>
     <Password>k</Password>
     <Correo>k</Correo>
-    <DireccionFisica>k</DireccionFisica>
+    <DireccionFisica>qw</DireccionFisica>
     <FechaDeNacimiento>5/11/2014</FechaDeNacimiento>
-    <MetodoDePago>k</MetodoDePago>
+    <MetodoDePago>opopop</MetodoDePago>
     <FechaDeRegistro>6/11/2014</FechaDeRegistro>
     <Rol>Comprador</Rol>
     <Id>10</Id>
+    <EstadoDeUsuario>Activo</EstadoDeUsuario>
+  </Usuario>
+  <Usuario>
+    <Nombre>Lucas</Nombre>
+    <Apellido>Leiva</Apellido>
+    <Cedula>o</Cedula>
+    <Username>o</Username>
+    <Password>o</Password>
+    <Correo>o</Correo>
+    <DireccionFisica>Lucas</DireccionFisica>
+    <FechaDeNacimiento>14/11/0000</FechaDeNacimiento>
+    <MetodoDePago>o</MetodoDePago>
+    <FechaDeRegistro>27/12/2014</FechaDeRegistro>
+    <Rol>Comprador</Rol>
+    <Id>12</Id>
     <EstadoDeUsuario>Activo</EstadoDeUsuario>
   </Usuario>
 </root>

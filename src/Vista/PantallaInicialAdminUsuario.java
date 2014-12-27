@@ -24,9 +24,8 @@ public class PantallaInicialAdminUsuario extends javax.swing.JFrame {
         usuario =  user;
         setLocationRelativeTo(null);
         setResizable(false);
-        jLUsuario.setText(user.getNombre() +" "+ user.getApellido());
-        //muestro el nombre del usuario en pantalla
-        //JLBNombre.setText(user.getNombre());
+        JLUsuario.setText(user.getNombre() +" "+ user.getApellido());
+        
     }
 
     /**
@@ -38,75 +37,17 @@ public class PantallaInicialAdminUsuario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
-        Logo = new javax.swing.JLabel();
-        jLUsuario = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         JLBNombre = new javax.swing.JLabel();
         jBGestionUsuario = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jTextField2 = new javax.swing.JTextField();
+        Logo1 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        JLUsuario = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jPanel1.setBackground(new java.awt.Color(0, 102, 204));
-
-        jTextField1.setText("   ");
-
-        Logo.setText("                      ");
-        Logo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        Logo.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                LogoMouseClicked(evt);
-            }
-        });
-
-        jLUsuario.setText("Inscríbete");
-        jLUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLUsuarioMouseClicked(evt);
-            }
-        });
-        jLUsuario.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                jLUsuarioFocusGained(evt);
-            }
-        });
-
-        jLabel2.setText("Salir");
-        jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel2MouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(49, 49, 49)
-                .addComponent(Logo, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
-                .addComponent(jLUsuario)
-                .addGap(48, 48, 48)
-                .addComponent(jLabel2)
-                .addGap(28, 28, 28))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1)
-                    .addComponent(Logo)
-                    .addComponent(jLUsuario)
-                    .addComponent(jLabel2))
-                .addContainerGap())
-        );
 
         JLBNombre.setText("    ");
 
@@ -117,11 +58,91 @@ public class PantallaInicialAdminUsuario extends javax.swing.JFrame {
             }
         });
 
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+
+        jTextField2.setText("   ");
+
+        Logo1.setIcon(new javax.swing.ImageIcon("C:\\Documents and Settings\\luis\\Escritorio\\icon-onlineStore_opt (1).jpg")); // NOI18N
+        Logo1.setText("                      ");
+        Logo1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Logo1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Logo1MouseClicked(evt);
+            }
+        });
+
+        jLabel1.setText("Inscríbete");
+        jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
+        jLabel1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jLabel1FocusGained(evt);
+            }
+        });
+
+        jLabel3.setText("Salir");
+        jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
+            }
+        });
+
+        JLUsuario.setText("  ");
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel2.setText("Bienvenido");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addComponent(Logo1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(53, 53, 53)
+                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(jLabel1)
+                        .addGap(40, 40, 40)
+                        .addComponent(jLabel3)
+                        .addContainerGap(69, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(JLUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Logo1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextField2)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel3))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(JLUsuario)
+                            .addComponent(jLabel2))))
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -130,63 +151,22 @@ public class PantallaInicialAdminUsuario extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(55, 55, 55)
                         .addComponent(jBGestionUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(206, Short.MAX_VALUE))
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(JLBNombre)
                 .addGap(50, 50, 50)
                 .addComponent(jBGestionUsuario)
-                .addGap(0, 255, Short.MAX_VALUE))
+                .addGap(0, 209, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jLUsuarioFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jLUsuarioFocusGained
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jLUsuarioFocusGained
-
-    private void jLUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLUsuarioMouseClicked
-        
-        java.awt.EventQueue.invokeLater(new Runnable() {
-                   
-                   public void run() {
-                   new PantallaPerfilUsuario(usuario).setVisible(true);
-                   }
-                   });
-                   this.dispose(); 
-        
-    }//GEN-LAST:event_jLUsuarioMouseClicked
-
-    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-        
-        java.awt.EventQueue.invokeLater(new Runnable() {
-                   
-                   public void run() {
-                   new PantallaInicialComprador(null).setVisible(true);
-                   }
-                   });
-                   this.dispose(); 
-        
-    }//GEN-LAST:event_jLabel2MouseClicked
-
-    private void LogoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogoMouseClicked
-        // TODO add your handling code here:
-        
-        java.awt.EventQueue.invokeLater(new Runnable() {
-                   
-                   public void run() {
-                   new PantallaInicialAdminUsuario(usuario).setVisible(true);
-                   }
-                   });
-                   this.dispose(); 
-        
-        
-    }//GEN-LAST:event_LogoMouseClicked
 
     private void jBGestionUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBGestionUsuarioActionPerformed
         // TODO add your handling code here:
@@ -196,6 +176,47 @@ public class PantallaInicialAdminUsuario extends javax.swing.JFrame {
             }
         });
     }//GEN-LAST:event_jBGestionUsuarioActionPerformed
+
+    private void Logo1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Logo1MouseClicked
+        // TODO add your handling code here:
+
+        java.awt.EventQueue.invokeLater(new Runnable() {
+
+            public void run() {
+                new PantallaInicialComprador(usuario).setVisible(true);
+            }
+        });
+        this.dispose();
+
+    }//GEN-LAST:event_Logo1MouseClicked
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+
+        java.awt.EventQueue.invokeLater(new Runnable() {
+
+            public void run() {
+                new PantallaCompradorRegistrar().setVisible(true);
+            }
+        });
+        this.dispose();
+
+    }//GEN-LAST:event_jLabel1MouseClicked
+
+    private void jLabel1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jLabel1FocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel1FocusGained
+
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+
+        java.awt.EventQueue.invokeLater(new Runnable() {
+
+            public void run() {
+                new PantallaInicialComprador(null).setVisible(true);
+            }
+        });
+        this.dispose();
+
+    }//GEN-LAST:event_jLabel3MouseClicked
 
     /**
      * @param args the command line arguments
@@ -237,11 +258,13 @@ public class PantallaInicialAdminUsuario extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel JLBNombre;
-    private javax.swing.JLabel Logo;
+    private javax.swing.JLabel JLUsuario;
+    private javax.swing.JLabel Logo1;
     private javax.swing.JButton jBGestionUsuario;
-    private javax.swing.JLabel jLUsuario;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }

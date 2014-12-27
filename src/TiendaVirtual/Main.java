@@ -3,8 +3,7 @@ package TiendaVirtual;
 
 import Controlador.*;
 import  Modelo.*;
-import Vista.PantallaInicial;
-import Vista.PantallaIniciarSesion;
+import Vista.PantallaInicialComprador;
 import java.io.*;
 import java.util.List;
 import java.util.logging.Level;
@@ -21,6 +20,7 @@ import org.apache.log4j.Logger;
  */
 public class Main {
     
+    static Usuario usuario; 
 
     public static void main(String[] args) throws IOException, JDOMException {
         
@@ -54,7 +54,7 @@ public class Main {
         
         
 
-        PantallaIniciarSesion pantalla = new PantallaIniciarSesion();
+        PantallaInicialComprador pantalla = new PantallaInicialComprador(usuario);
         pantalla.setVisible(true);
     }
         

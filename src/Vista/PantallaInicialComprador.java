@@ -44,10 +44,11 @@ public class PantallaInicialComprador extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(0, 102, 204));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jTextField1.setText("   ");
 
+        Logo.setIcon(new javax.swing.ImageIcon("C:\\Documents and Settings\\luis\\Escritorio\\icon-onlineStore_opt (1).jpg")); // NOI18N
         Logo.setText("                      ");
         Logo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Logo.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -83,24 +84,27 @@ public class PantallaInicialComprador extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(49, 49, 49)
-                .addComponent(Logo, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
+                .addComponent(Logo, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(53, 53, 53)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
+                .addGap(30, 30, 30)
                 .addComponent(jLabel1)
-                .addGap(42, 42, 42)
+                .addGap(40, 40, 40)
                 .addComponent(jLabel2)
-                .addContainerGap(53, Short.MAX_VALUE))
+                .addContainerGap(52, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1)
-                    .addComponent(Logo)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Logo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jTextField1)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2))))
                 .addContainerGap())
         );
 
@@ -132,7 +136,7 @@ public class PantallaInicialComprador extends javax.swing.JFrame {
                 .addComponent(JLBNombre)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel3)
-                .addGap(0, 288, Short.MAX_VALUE))
+                .addGap(0, 299, Short.MAX_VALUE))
         );
 
         pack();

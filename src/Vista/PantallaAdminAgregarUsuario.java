@@ -6,6 +6,7 @@ import Modelo.Usuario;
 import TiendaVirtual.EscribeFichero;
 import TiendaVirtual.LeerFichero;
 import java.io.IOException;
+import java.util.Calendar;
 import java.util.logging.Level;
 
 import java.util.logging.Logger;
@@ -83,13 +84,13 @@ public class PantallaAdminAgregarUsuario extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         JTFDireccion = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
-        JTFFechaRegistro = new javax.swing.JTextField();
-        JTFFechaNacimiento = new javax.swing.JTextField();
         JTFMetodoDePago = new javax.swing.JTextField();
         JLBId = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox();
         jComboBox2 = new javax.swing.JComboBox();
+        jDFechaNacimiento = new com.toedter.calendar.JDateChooser();
+        jDFechaRegistro = new com.toedter.calendar.JDateChooser();
 
         JTFPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -138,6 +139,12 @@ public class PantallaAdminAgregarUsuario extends javax.swing.JFrame {
 
         jLabel10.setText("Fecha de Registro");
 
+        JTFDireccion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JTFDireccionActionPerformed(evt);
+            }
+        });
+
         jLabel13.setText("Estado de Usuario");
 
         jLabel12.setText("ID:");
@@ -165,14 +172,20 @@ public class PantallaAdminAgregarUsuario extends javax.swing.JFrame {
                     .addComponent(JTFCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(JTFPassword)
+                            .addComponent(JTFPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 91, Short.MAX_VALUE)
                             .addComponent(JTFApellido, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(JTFUsername, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(JTFNombre, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 91, Short.MAX_VALUE)
-                            .addComponent(JTFCorreo, javax.swing.GroupLayout.Alignment.LEADING))
+                            .addComponent(JTFCorreo, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(JTFNombre, javax.swing.GroupLayout.Alignment.LEADING))
                         .addGap(90, 90, 90)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(JBAgregarUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(JBAgregarUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                    .addGap(143, 143, 143)
+                                    .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(JLBId, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel6)
@@ -182,19 +195,15 @@ public class PantallaAdminAgregarUsuario extends javax.swing.JFrame {
                                     .addComponent(jLabel11)
                                     .addComponent(jLabel13))
                                 .addGap(28, 28, 28)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(JTFFechaRegistro)
-                                    .addComponent(JTFMetodoDePago)
-                                    .addComponent(JTFFechaNacimiento)
-                                    .addComponent(jComboBox1, javax.swing.GroupLayout.Alignment.TRAILING, 0, 91, Short.MAX_VALUE)
-                                    .addComponent(JTFDireccion)
-                                    .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addGap(143, 143, 143)
-                                .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(18, 18, 18)
-                                .addComponent(JLBId, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)))))
-                .addGap(73, 73, 73))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(JTFMetodoDePago)
+                                        .addComponent(jComboBox1, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(JTFDireccion)
+                                        .addComponent(jDFechaNacimiento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(jDFechaRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addGap(69, 69, 69))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -206,11 +215,12 @@ public class PantallaAdminAgregarUsuario extends javax.swing.JFrame {
                     .addComponent(jLabel6)
                     .addComponent(JTFDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(JTFApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2)
-                    .addComponent(JTFFechaNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(JTFApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel2)
+                        .addComponent(jLabel8))
+                    .addComponent(jDFechaNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JTFCedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -218,11 +228,12 @@ public class PantallaAdminAgregarUsuario extends javax.swing.JFrame {
                     .addComponent(JTFMetodoDePago, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(JTFUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(JTFFechaRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel10))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel4)
+                        .addComponent(JTFUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel10))
+                    .addComponent(jDFechaRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JTFPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -276,9 +287,9 @@ public class PantallaAdminAgregarUsuario extends javax.swing.JFrame {
         password = JTFPassword.getText();
         correo = JTFCorreo.getText();
         direccionFisica = JTFDireccion.getText();
-        fechaDeNacimiento = JTFFechaNacimiento.getText();
+        fechaDeNacimiento = String.valueOf(jDFechaNacimiento.getCalendar().get(Calendar.DATE)) +"/"+ String.valueOf(jDFechaNacimiento.getCalendar().get(Calendar.MONTH)) +"/"+ String.valueOf(jDFechaNacimiento.getCalendar().get(Calendar.YEAR));
         metodoDePago = JTFMetodoDePago.getText();
-        fechaDeRegistro = JTFFechaRegistro.getText();
+        fechaDeRegistro = String.valueOf(jDFechaRegistro.getCalendar().get(Calendar.DATE)) +"/"+ String.valueOf(jDFechaRegistro.getCalendar().get(Calendar.MONTH)) +"/"+ String.valueOf(jDFechaRegistro.getCalendar().get(Calendar.YEAR));
         rol = (String) jComboBox1.getSelectedItem();
         idUsuario = JLBId.getText();
         estadoUsuario = (String) jComboBox2.getSelectedItem();//asigno los valores de los campos de texto a las variables
@@ -287,7 +298,7 @@ public class PantallaAdminAgregarUsuario extends javax.swing.JFrame {
         Usuario user = new Usuario(nombre, apellido, cedula, username, password, correo, direccionFisica, fechaDeNacimiento, metodoDePago, fechaDeRegistro, rol, idUsuario, estadoUsuario);
 
         //Verifico que los campos no estén vacíos
-        if(JTFNombre.getText().isEmpty() || JTFApellido.getText().isEmpty() || JTFCedula.getText().isEmpty() || JTFUsername.getText().isEmpty() || JTFPassword.getText().isEmpty() || JTFCorreo.getText().isEmpty() || JTFDireccion.getText().isEmpty()   || JTFFechaNacimiento.getText().isEmpty() ||  JTFMetodoDePago.getText().isEmpty() || JTFFechaRegistro.getText().isEmpty()){
+        if(JTFNombre.getText().isEmpty() || JTFApellido.getText().isEmpty() || JTFCedula.getText().isEmpty() || JTFUsername.getText().isEmpty() || JTFPassword.getText().isEmpty() || JTFCorreo.getText().isEmpty() || JTFDireccion.getText().isEmpty()   || jDFechaNacimiento.getDateFormatString().isEmpty() ||  JTFMetodoDePago.getText().isEmpty() || jDFechaRegistro.getDateFormatString().isEmpty()){
             JOptionPane.showMessageDialog(null, "Por favor llene todos los campos", "Error al Agregar Categoria", JOptionPane.ERROR_MESSAGE);
 
             //log4j
@@ -333,6 +344,10 @@ public class PantallaAdminAgregarUsuario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_JTFPasswordActionPerformed
 
+    private void JTFDireccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFDireccionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JTFDireccionActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -375,14 +390,14 @@ public class PantallaAdminAgregarUsuario extends javax.swing.JFrame {
     private javax.swing.JTextField JTFCedula;
     private javax.swing.JTextField JTFCorreo;
     private javax.swing.JTextField JTFDireccion;
-    private javax.swing.JTextField JTFFechaNacimiento;
-    private javax.swing.JTextField JTFFechaRegistro;
     private javax.swing.JTextField JTFMetodoDePago;
     private javax.swing.JTextField JTFNombre;
     private javax.swing.JTextField JTFPassword;
     private javax.swing.JTextField JTFUsername;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JComboBox jComboBox2;
+    private com.toedter.calendar.JDateChooser jDFechaNacimiento;
+    private com.toedter.calendar.JDateChooser jDFechaRegistro;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
