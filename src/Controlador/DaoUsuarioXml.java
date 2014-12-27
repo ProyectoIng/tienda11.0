@@ -164,6 +164,20 @@ public class DaoUsuarioXml {
         return null;
     }
     
+    public  Element buscarUnId(List raiz) {
+        Iterator i = raiz.iterator();
+        while (i.hasNext()) {
+            Element e = (Element) i.next();
+            if (e.getChild("Id").getText()!="") {
+                System.out.println("encontre");
+                return e.getChild("Id");
+            }
+        }
+        return null;
+    }
+    
+   
+    
     public static Element buscarPorUsername(List raiz, String dato) {
         Iterator i = raiz.iterator();
         while (i.hasNext()) {
@@ -177,9 +191,21 @@ public class DaoUsuarioXml {
     }
     
     //Esto es lo que uso para iniciar sesion
-     
+    
+    public static Element buscarPorEstado(List raiz, String dato) {
+        Iterator i = raiz.iterator();
+        while (i.hasNext()) {
+            Element e = (Element) i.next();
+            if (dato.equals(e.getChild("EstadoDeUsuario").getText())) {
+                System.out.println("encontre");
+                return e;
+            }
+        }
+        return null;
+    }
  
      
+    
      
     public Usuario buscarUsuario(String Identificador) {
         Element aux = new Element("Usuario");
@@ -202,6 +228,22 @@ public class DaoUsuarioXml {
         List Usuarios = this.root.getChildren();
         while (aux != null) {
             aux = DaoUsuarioXml.buscarPorUsername(Usuarios,Username);
+            if (aux != null) {
+                try {
+                    return UsuarioToObject(aux);
+                } catch (ParseException ex) {
+                    System.out.println(ex.getMessage());
+                }
+            }
+        }
+        return null;
+    }
+       
+       public Usuario buscarEstado(String Estado) {
+        Element aux = new Element("EstadoDeUsuario");
+        List Usuarios = this.root.getChildren();
+        while (aux != null) {
+            aux = DaoUsuarioXml.buscarPorEstado(Usuarios,Estado);
             if (aux != null) {
                 try {
                     return UsuarioToObject(aux);

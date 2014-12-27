@@ -1,137 +1,62 @@
 <root>
   <Usuario>
-    <Nombre>luis</Nombre>
-    <Apellido>Gamez</Apellido>
-    <Cedula>23710750</Cedula>
-    <Username>luis</Username>
-    <Password>luis</Password>
-    <Correo>lglink777@gmail.com</Correo>
-    <DireccionFisica>los teques</DireccionFisica>
-    <FechaDeNacimiento>11/10/94</FechaDeNacimiento>
-    <MetodoDePago>afngg</MetodoDePago>
-    <FechaDeRegistro>31323</FechaDeRegistro>
-    <Rol>egwgrg</Rol>
-    <Id>1234</Id>
-    <EstadoDeUsuario>gewgwg</EstadoDeUsuario>
-  </Usuario>
-  <Usuario>
     <Nombre>Luis</Nombre>
     <Apellido>García</Apellido>
-    <Cedula>12345678</Cedula>
-    <Username>maxluis</Username>
-    <Password>12345</Password>
-    <Correo>luisgar@hotmail.com</Correo>
-    <DireccionFisica>Mi casa</DireccionFisica>
-    <FechaDeNacimiento>14-05-1954</FechaDeNacimiento>
-    <MetodoDePago>Visa</MetodoDePago>
-    <FechaDeRegistro>4-12-2014</FechaDeRegistro>
-    <Rol>admin</Rol>
+    <Cedula>111111</Cedula>
+    <Username>luis</Username>
+    <Password>luis</Password>
+    <Correo>luis@gmail.com</Correo>
+    <DireccionFisica>ccs</DireccionFisica>
+    <FechaDeNacimiento>12-12-12</FechaDeNacimiento>
+    <MetodoDePago>tarjeta</MetodoDePago>
+    <FechaDeRegistro>12-12-12</FechaDeRegistro>
+    <Rol>Administrador</Rol>
     <Id>1</Id>
-    <EstadoDeUsuario>activo</EstadoDeUsuario>
+    <EstadoDeUsuario>Inactivo</EstadoDeUsuario>
   </Usuario>
   <Usuario>
-    <Nombre>2312</Nombre>
-    <Apellido>123</Apellido>
-    <Cedula>123</Cedula>
-    <Username>123</Username>
-    <Password>213</Password>
-    <Correo>3123</Correo>
-    <DireccionFisica>213</DireccionFisica>
-    <FechaDeNacimiento>123</FechaDeNacimiento>
-    <MetodoDePago>13123</MetodoDePago>
-    <FechaDeRegistro>12312</FechaDeRegistro>
-    <Rol>123</Rol>
-    <Id>123</Id>
-    <EstadoDeUsuario>11</EstadoDeUsuario>
+    <Nombre>inv</Nombre>
+    <Apellido>inv</Apellido>
+    <Cedula>inv</Cedula>
+    <Username>inv</Username>
+    <Password>inv</Password>
+    <Correo>inv</Correo>
+    <DireccionFisica>inv</DireccionFisica>
+    <FechaDeNacimiento>inv</FechaDeNacimiento>
+    <MetodoDePago>inv</MetodoDePago>
+    <FechaDeRegistro>inv</FechaDeRegistro>
+    <Rol>Inventario</Rol>
+    <Id>4</Id>
+    <EstadoDeUsuario>Inactivo</EstadoDeUsuario>
   </Usuario>
   <Usuario>
-    <Nombre />
-    <Apellido />
-    <Cedula />
-    <Username />
-    <Password />
-    <Correo />
-    <DireccionFisica />
-    <FechaDeNacimiento />
-    <MetodoDePago />
-    <FechaDeRegistro />
-    <Rol />
-    <Id />
-    <EstadoDeUsuario />
-  </Usuario>
-  <Usuario>
-    <Nombre>Juan</Nombre>
-    <Apellido>Ariza</Apellido>
-    <Cedula>11111111</Cedula>
-    <Username>arizajuan</Username>
-    <Password>arijuan</Password>
-    <Correo>juanariza@gmail.com</Correo>
-    <DireccionFisica>Su apto</DireccionFisica>
-    <FechaDeNacimiento>12-03-1943</FechaDeNacimiento>
-    <MetodoDePago>Mastercard</MetodoDePago>
-    <FechaDeRegistro>2-12-2014</FechaDeRegistro>
-    <Rol>admin</Rol>
+    <Nombre>lu</Nombre>
+    <Apellido>lu</Apellido>
+    <Cedula>lu</Cedula>
+    <Username>lu</Username>
+    <Password>lu</Password>
+    <Correo>lu</Correo>
+    <DireccionFisica>lu</DireccionFisica>
+    <FechaDeNacimiento>lu</FechaDeNacimiento>
+    <MetodoDePago>lul</MetodoDePago>
+    <FechaDeRegistro>lu</FechaDeRegistro>
+    <Rol>Administrador</Rol>
     <Id>2</Id>
-    <EstadoDeUsuario>activo</EstadoDeUsuario>
+    <EstadoDeUsuario>Activo</EstadoDeUsuario>
   </Usuario>
   <Usuario>
-    <Nombre>hu</Nombre>
-    <Apellido>huh</Apellido>
-    <Cedula>uh</Cedula>
-    <Username>uhu</Username>
-    <Password>ihuh</Password>
-    <Correo>huh</Correo>
-    <DireccionFisica>iuh</DireccionFisica>
-    <FechaDeNacimiento>uih</FechaDeNacimiento>
-    <MetodoDePago>h</MetodoDePago>
-    <FechaDeRegistro>iuh</FechaDeRegistro>
-    <Rol>iuu</Rol>
-    <Id>1</Id>
-    <EstadoDeUsuario>uh</EstadoDeUsuario>
-  </Usuario>
-  <Usuario>
-    <Nombre>hu</Nombre>
-    <Apellido>hiuh</Apellido>
-    <Cedula>uih</Cedula>
-    <Username>uh</Username>
-    <Password>uih</Password>
-    <Correo>iuh</Correo>
-    <DireccionFisica>ui</DireccionFisica>
-    <FechaDeNacimiento>hiu</FechaDeNacimiento>
-    <MetodoDePago>hiu</MetodoDePago>
-    <FechaDeRegistro>erw</FechaDeRegistro>
-    <Rol>huih</Rol>
-    <Id>1</Id>
-    <EstadoDeUsuario>g</EstadoDeUsuario>
-  </Usuario>
-  <Usuario>
-    <Nombre>yt</Nombre>
-    <Apellido>y</Apellido>
-    <Cedula>tyt</Cedula>
-    <Username>yt</Username>
-    <Password>ut</Password>
-    <Correo>uyt</Correo>
-    <DireccionFisica>uyt</DireccionFisica>
-    <FechaDeNacimiento>y</FechaDeNacimiento>
-    <MetodoDePago>tuyt</MetodoDePago>
-    <FechaDeRegistro>yt</FechaDeRegistro>
-    <Rol>yt</Rol>
-    <Id>ytuytuytuytuy</Id>
-    <EstadoDeUsuario>yt</EstadoDeUsuario>
-  </Usuario>
-  <Usuario>
-    <Nombre>yt</Nombre>
-    <Apellido>y</Apellido>
-    <Cedula>tyt</Cedula>
-    <Username>yt</Username>
-    <Password>ut</Password>
-    <Correo>uyt</Correo>
-    <DireccionFisica>uyt</DireccionFisica>
-    <FechaDeNacimiento>y</FechaDeNacimiento>
-    <MetodoDePago>tuyt</MetodoDePago>
-    <FechaDeRegistro>yt</FechaDeRegistro>
-    <Rol>yt</Rol>
-    <Id>ytuytuytuytuy</Id>
-    <EstadoDeUsuario>yt</EstadoDeUsuario>
+    <Nombre>k</Nombre>
+    <Apellido>k</Apellido>
+    <Cedula>k</Cedula>
+    <Username>k</Username>
+    <Password>k</Password>
+    <Correo>k</Correo>
+    <DireccionFisica>k</DireccionFisica>
+    <FechaDeNacimiento>5/11/2014</FechaDeNacimiento>
+    <MetodoDePago>k</MetodoDePago>
+    <FechaDeRegistro>6/11/2014</FechaDeRegistro>
+    <Rol>Comprador</Rol>
+    <Id>10</Id>
+    <EstadoDeUsuario>Activo</EstadoDeUsuario>
   </Usuario>
 </root>

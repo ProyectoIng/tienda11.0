@@ -1,30 +1,18 @@
 <root>
   <Categoria>
-    <Nombre>celulares</Nombre>
-    <Id>5</Id>
-  </Categoria>
-  <Categoria>
-    <Nombre>zapatos</Nombre>
+    <Nombre>Electrónicos</Nombre>
     <Id>1</Id>
   </Categoria>
   <Categoria>
-    <Nombre>Tacos</Nombre>
-    <Id>9</Id>
+    <Nombre>cocina</Nombre>
+    <Id>4</Id>
   </Categoria>
   <Categoria>
-    <Nombre>Cables</Nombre>
-    <Id>22</Id>
+    <Nombre>comida</Nombre>
+    <Id>5</Id>
   </Categoria>
   <Categoria>
-    <Nombre>Guitarra</Nombre>
-    <Id>100</Id>
-  </Categoria>
-  <Categoria>
-    <Nombre>qwewq</Nombre>
-    <Id>2123</Id>
-  </Categoria>
-  <Categoria>
-    <Nombre>vasos</Nombre>
-    <Id>23</Id>
+    <Nombre>harina</Nombre>
+    <Id>6</Id>
   </Categoria>
 </root>

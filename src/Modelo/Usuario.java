@@ -3,6 +3,8 @@ package Modelo;
 
 public class Usuario {
     
+    
+
     private String nombre;
     private String apellido;
     private String cedula;

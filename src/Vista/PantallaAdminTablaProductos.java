@@ -5,6 +5,7 @@ import Controlador.*;
 import Modelo.Producto;
 import Modelo.Usuario;
 import static Vista.PantallaAdminTablaUsuarios.idaux;
+import static Vista.PantallaIngresar.usuario;
 import java.util.ArrayList;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
@@ -29,7 +30,6 @@ public class PantallaAdminTablaProductos extends javax.swing.JFrame {
         
         modelo = new DefaultTableModel();
         modelo.addColumn("Nombre");
-        modelo.addColumn("Seo");
         modelo.addColumn("Descripcion");
         modelo.addColumn("Precio");
         modelo.addColumn("Imagen");
@@ -38,10 +38,11 @@ public class PantallaAdminTablaProductos extends javax.swing.JFrame {
         modelo.addColumn("Id");
         modelo.addColumn("Estado");
         modelo.addColumn("CantidadMinima");
+        modelo.addColumn("CantidadActual");
         
         this.jTable1.setModel(modelo);//a mi tabla table le asigno el tipo modelo que cree ahora
         
-        llenaTabla(id);
+        llenaTabla(id);//Lleno la tabla
         
         //imagen de fondo
         setLocationRelativeTo(null);
@@ -68,13 +69,9 @@ public class PantallaAdminTablaProductos extends javax.swing.JFrame {
         for (Producto pro : Lista)
         {
            
-        
-            
-        
-        
-            
+
              if (pro != null) {
-               String[] row = {pro.getNombre(),pro.getSeo(),pro.getDescripcion(),pro.getPrecio(),pro.getImagen(),pro.getCategoria(),pro.getProveedor(),pro.getIdProducto(),pro.getEstadoProducto(),pro.getCantidadMinima()};
+               String[] row = {pro.getNombre(),pro.getDescripcion(),pro.getPrecio(),pro.getImagen(),pro.getCategoria(),pro.getProveedor(),pro.getIdProducto(),pro.getEstadoProducto(),pro.getCantidadMinima(),pro.getCantidadActual()};
                modelo.addRow(row);
              }
             
@@ -188,23 +185,23 @@ public class PantallaAdminTablaProductos extends javax.swing.JFrame {
         
         BasicConfigurator.configure();
         int filaSeleccionada = jTable1.getSelectedRow();//Obtengo la fila seleccionada
-        String nombre,seo,descripcion,precio,imagen,categoria,proveedor,id,estado,cantidadMinima;
+        String nombre,descripcion,precio,imagen,categoria,proveedor,id,estado,cantidadMinima,cantidadActual;
         //meto los valores de la fila seleccionada en las variables
         
         if (filaSeleccionada >= 0 ){
         nombre = jTable1.getValueAt(filaSeleccionada, 0).toString();
-        seo = jTable1.getValueAt(filaSeleccionada, 1).toString();
-        descripcion = jTable1.getValueAt(filaSeleccionada, 2).toString();
-        precio = jTable1.getValueAt(filaSeleccionada, 3).toString();
-        imagen = jTable1.getValueAt(filaSeleccionada, 4).toString();
-        categoria = jTable1.getValueAt(filaSeleccionada, 5).toString();
-        proveedor = jTable1.getValueAt(filaSeleccionada, 6).toString();
-        id = jTable1.getValueAt(filaSeleccionada, 7).toString();
-        estado = jTable1.getValueAt(filaSeleccionada, 8).toString();
-        cantidadMinima = jTable1.getValueAt(filaSeleccionada, 9).toString();
+        descripcion = jTable1.getValueAt(filaSeleccionada, 1).toString();
+        precio = jTable1.getValueAt(filaSeleccionada, 2).toString();
+        imagen = jTable1.getValueAt(filaSeleccionada, 3).toString();
+        categoria = jTable1.getValueAt(filaSeleccionada, 4).toString();
+        proveedor = jTable1.getValueAt(filaSeleccionada, 5).toString();
+        id = jTable1.getValueAt(filaSeleccionada, 6).toString();
+        estado = jTable1.getValueAt(filaSeleccionada, 7).toString();
+        cantidadMinima = jTable1.getValueAt(filaSeleccionada, 8).toString();
+        cantidadActual = jTable1.getValueAt(filaSeleccionada, 9).toString();
         
         //creo objeto producto
-        Producto pro = new Producto(nombre, seo, descripcion, precio, imagen, categoria, proveedor, id, estado, cantidadMinima);
+        Producto pro = new Producto(nombre, descripcion, precio, imagen, categoria, proveedor, id, estado, cantidadMinima, cantidadActual);
         //abro la pantalla de modificar y le paso como parametro mi objeto
         PantallaAdminModificarProducto _PantallaModificarProducto = new PantallaAdminModificarProducto(pro);
         _PantallaModificarProducto.setVisible(true);
@@ -232,7 +229,7 @@ public class PantallaAdminTablaProductos extends javax.swing.JFrame {
         if (filaseleccionada >= 0){
         
             
-            idProductoSeleccionado = jTable1.getValueAt(filaseleccionada, 7).toString();
+            idProductoSeleccionado = jTable1.getValueAt(filaseleccionada, 6).toString();
             
             
             datosProducto.borrarProducto(idProductoSeleccionado);//Borro el producto con el id seleccionado
@@ -254,7 +251,7 @@ public class PantallaAdminTablaProductos extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
                    
                    public void run() {
-                   new PantallaInicial().setVisible(true);
+                   new PantallaInicialInvUsuario(usuario).setVisible(true);
                    }
                    });
                    this.dispose();  

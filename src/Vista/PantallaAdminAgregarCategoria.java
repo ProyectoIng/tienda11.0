@@ -9,6 +9,8 @@ package Vista;
 import Vista.*;
 import Controlador.*;
 import Modelo.*;
+import TiendaVirtual.EscribeFichero;
+import TiendaVirtual.LeerFichero;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -24,15 +26,28 @@ import org.apache.log4j.BasicConfigurator;
 //import org.apache.log4j.Logger;
 
 public class PantallaAdminAgregarCategoria extends javax.swing.JFrame {
+    
+    LeerFichero leer =  new LeerFichero();
+    EscribeFichero escribe = new EscribeFichero();
+    private static String idaux;//Auxiliar del id del usuario
+    private static int intIdCategoria;//valor entero para poder sumar el id
 
      private boolean resultado = false;
-     static String idaux;
      DaoCategoriaXml datosCategoria = new DaoCategoriaXml();//Creo objeto del controlador Categoria
     
     
     
     public PantallaAdminAgregarCategoria() {
         initComponents();
+        
+        
+         try {//obtengo el id desde el archivo idUsuario
+            idaux = leer.obtenerId("idCategoria.txt");
+        } catch (IOException ex) {
+            Logger.getLogger(PantallaAdminAgregarProducto.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        JLBId.setText(idaux);//Le asigno al jlblid el id del archivo
         
         //imagen de fondo
         setLocationRelativeTo(null);
@@ -56,15 +71,16 @@ public class PantallaAdminAgregarCategoria extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        JTFNombre = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        JTFNombre = new javax.swing.JTextField();
-        JTFId = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        JLBId = new javax.swing.JLabel();
 
         jLabel1.setText("Nombre");
 
-        jLabel2.setText("Id");
+        jLabel2.setText("ID:");
 
         jButton1.setText("Agregar Categoría");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -73,39 +89,60 @@ public class PantallaAdminAgregarCategoria extends javax.swing.JFrame {
             }
         });
 
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel2)
+                        .addGap(18, 18, 18)
+                        .addComponent(JLBId, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(18, 18, 18)
+                                .addComponent(JTFNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(55, 55, 55)
+                                .addComponent(jButton1)))))
+                .addContainerGap(56, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JTFNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addGap(34, 34, 34)
+                .addComponent(jButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(JLBId, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(48, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(64, 64, 64)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(JTFNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(172, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(JTFId, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1)
-                        .addGap(21, 21, 21))))
+                .addGap(73, 73, 73)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(75, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(71, 71, 71)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(JTFNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(39, 39, 39)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(JTFId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
-                .addContainerGap(147, Short.MAX_VALUE))
+                .addGap(47, 47, 47)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(64, Short.MAX_VALUE))
         );
 
         pack();
@@ -114,12 +151,12 @@ public class PantallaAdminAgregarCategoria extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        
         BasicConfigurator.configure();
-        Categoria cat = new Categoria(JTFNombre.getText(), JTFId.getText());
-        resultado = datosCategoria.agregarCategoria(cat);
-        datosCategoria.todasLasCategorias();
+        Categoria cat = new Categoria(JTFNombre.getText(), JLBId.getText());
+        
+        
         
        
-        if (JTFNombre.getText().isEmpty() || JTFId.getText().isEmpty()) {
+        if (JTFNombre.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Por favor llene todos los campos", "Error al Agregar Categoria", JOptionPane.ERROR_MESSAGE);
             
                         //log4j
@@ -130,6 +167,9 @@ public class PantallaAdminAgregarCategoria extends javax.swing.JFrame {
         
         
         else{
+            
+            resultado = datosCategoria.agregarCategoria(cat);
+            
         if (resultado == true) {
                         JOptionPane.showMessageDialog(null, "categoria agregada con exito!", "Operacion Exitosa", JOptionPane.INFORMATION_MESSAGE);
                         //limpia();
@@ -144,6 +184,14 @@ public class PantallaAdminAgregarCategoria extends javax.swing.JFrame {
                         //log4j
                         Logger log = Logger.getLogger("Logger de Ejemplo");
                         log.info("se agrego la categoria");
+                        
+                        
+                        //GESTIÓN DEL ID 
+                        intIdCategoria = Integer.parseInt(idaux);//parseo a int el id
+                        intIdCategoria++;//le sumo uno al id
+                        idaux = Integer.toString(intIdCategoria);//Parseo a string el id
+                        escribe.Escribir("idCategoria.txt", idaux);//escribo el id en el archivo
+                        
                     } else {
                         JOptionPane.showMessageDialog(null, "Operacion Fallida", "Error", JOptionPane.ERROR_MESSAGE);
                         
@@ -187,10 +235,11 @@ public class PantallaAdminAgregarCategoria extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField JTFId;
+    private javax.swing.JLabel JLBId;
     private javax.swing.JTextField JTFNombre;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

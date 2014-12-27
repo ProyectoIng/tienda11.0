@@ -1,6 +1,7 @@
 package Controlador;
 
 import Modelo.*;
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.ParseException;
@@ -28,7 +29,6 @@ public class DaoProductoXml {
     Element ProductoTrans = new Element("Producto");//Aquí dentro van a estar los atributos del producto
     //De aquí para abajo están todos los atributos del Producto
     Element nombre = new Element("Nombre");
-    Element seo = new Element("Seo");
     Element descripcion = new Element("Descripcion");
     Element precio = new Element("Precio");
     Element imagen = new Element("Imagen");
@@ -37,11 +37,11 @@ public class DaoProductoXml {
     Element idProducto = new Element("Id");
     Element estadoPoducto = new Element("Estado");
     Element cantidadMinima = new Element("CantidadMinima");
+    Element cantidadActual = new Element("CantidadActual");
     
     
     //Aquí le asigno los valores de cada atributo al producto
     nombre.setText(nProducto.getNombre());
-    seo.setText(nProducto.getSeo());
     descripcion.setText(nProducto.getDescripcion());
     precio.setText(nProducto.getPrecio());
     imagen.setText(nProducto.getImagen());
@@ -50,11 +50,11 @@ public class DaoProductoXml {
     idProducto.setText(nProducto.getIdProducto());
     estadoPoducto.setText(nProducto.getEstadoProducto());
     cantidadMinima.setText(nProducto.getCantidadMinima());
+    cantidadActual.setText(nProducto.getCantidadActual());
     
     
     //Luego paso todos los datos a ProductoTrans
     ProductoTrans.addContent(nombre);
-    ProductoTrans.addContent(seo);
     ProductoTrans.addContent(descripcion);
     ProductoTrans.addContent(precio);
     ProductoTrans.addContent(imagen);
@@ -63,6 +63,7 @@ public class DaoProductoXml {
     ProductoTrans.addContent(idProducto);
     ProductoTrans.addContent(estadoPoducto);
     ProductoTrans.addContent(cantidadMinima);
+    ProductoTrans.addContent(cantidadActual);
     
     return ProductoTrans;
     
@@ -106,7 +107,7 @@ public class DaoProductoXml {
     }
     
     private Producto ProductoToObject(Element element) throws ParseException {
-        Producto nProducto = new Producto(element.getChildText("Nombre"),element.getChildText("Seo"),element.getChildText("Descripcion"),element.getChildText("Precio"),element.getChildText("Imagen"),element.getChildText("Categoria"),element.getChildText("Proveedor"),element.getChildText("Id"),element.getChildText("Estado"),element.getChildText("CantidadMinima"));
+        Producto nProducto = new Producto(element.getChildText("Nombre"),element.getChildText("Descripcion"),element.getChildText("Precio"),element.getChildText("Imagen"),element.getChildText("Categoria"),element.getChildText("Proveedor"),element.getChildText("Id"),element.getChildText("Estado"),element.getChildText("CantidadMinima"),element.getChildText("CantidadActual"));
         return nProducto;
     }
     
@@ -153,6 +154,9 @@ public class DaoProductoXml {
         return null;
     }
     
+   
+    
+    
     public Producto buscarProducto(String Identificador) {
         Element aux = new Element("Producto");
         List Productos = this.root.getChildren();
@@ -169,6 +173,8 @@ public class DaoProductoXml {
         return null;
     }
     
+    
+    
     public ArrayList<Producto> todosLosProductos() {
         ArrayList<Producto> resultado = new ArrayList<Producto>();
         for (Object it : root.getChildren()) {
@@ -184,7 +190,63 @@ public class DaoProductoXml {
     }
 
 
-    
+    public void cargarXml()
+{
+    //Se crea un SAXBuilder para poder parsear el archivo
+    SAXBuilder builder = new SAXBuilder();
+    File xmlFile = new File( "src//BaseDatos//ProductosXML.xml" );
+    try
+    {
+        //Se crea el documento a traves del archivo
+        Document document = (Document) builder.build( xmlFile );
+ 
+        //Se obtiene la raiz 'tables'
+        Element rootNode = document.getRootElement();
+ 
+        //Se obtiene la lista de hijos de la raiz 'tables'
+        List list = rootNode.getChildren( "Producto" );
+ 
+        //Se recorre la lista de hijos de 'tables'
+        for ( int i = 0; i < list.size(); i++ )
+        {
+            //Se obtiene el elemento 'tabla'
+            Element tabla = (Element) list.get(i);
+ 
+            //Se obtiene el atributo 'nombre' que esta en el tag 'tabla'
+            String nombreTabla = tabla.getAttributeValue("Nombre");
+ 
+            System.out.println( "Nombre: " + nombreTabla );
+ 
+            //Se obtiene la lista de hijos del tag 'tabla'
+            List lista_campos = tabla.getChildren();
+ 
+            System.out.println( "\tNombre\t\tTipo\t\tValor" );
+ 
+            //Se recorre la lista de campos
+            for ( int j = 0; j < lista_campos.size(); j++ )
+            {
+                //Se obtiene el elemento 'campo'
+                Element campo = (Element)lista_campos.get( j );
+         
+                //Se obtienen los valores que estan entre los tags '<campo></campo>'
+                //Se obtiene el valor que esta entre los tags '<nombre></nombre>'
+                String nombre = campo.getChildTextTrim("nombre");
+ 
+                //Se obtiene el valor que esta entre los tags '<tipo></tipo>'
+                String tipo = campo.getChildTextTrim("tipo");
+ 
+                //Se obtiene el valor que esta entre los tags '<valor></valor>'
+                String valor = campo.getChildTextTrim("valor");
+ 
+                System.out.println( "\t"+nombre+"\t\t"+tipo+"\t\t"+valor);
+            }
+        }
+    }catch ( IOException io ) {
+        System.out.println( io.getMessage() );
+    }catch ( JDOMException jdomex ) {
+        System.out.println( jdomex.getMessage() );
+    }
+}
     
     
     

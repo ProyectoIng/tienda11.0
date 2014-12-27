@@ -8,6 +8,7 @@ package Vista;
 
 import Controlador.*;
 import Modelo.*;
+import static Vista.PantallaIngresar.usuario;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
@@ -15,13 +16,13 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 
-public class PantallaAdminModificarUsuario extends javax.swing.JFrame {
-
+public class PantallaModificarUsuario extends javax.swing.JFrame {
+    static Usuario usuario;
     DaoUsuarioXml datosUsuario = new DaoUsuarioXml();//Creo el objeto de datosUsuario para insertar el usuario en el xml
     private boolean resultado = false;//un boolean para obtener un resultado de ingreso del usuario
     static private String idaux;//Auxiliar del id del usuario
  
-    public PantallaAdminModificarUsuario(Usuario user) {
+    public PantallaModificarUsuario(Usuario user) {
         initComponents();
         JTFNombre.setText(user.getNombre());
         JTFApellido.setText(user.getApellido());
@@ -33,14 +34,13 @@ public class PantallaAdminModificarUsuario extends javax.swing.JFrame {
         JTFFechaNacimiento.setText(user.getFechaDeNacimiento());
         JTFMetodoDePago.setText(user.getMetodoDePago());
         JTFFechaRegistro.setText(user.getFechaDeRegistro());
-        JCRol.setSelectedItem(user.getRol());
-        JLBId.setText(user.getIdUsuario());
-        JCEstado.setSelectedItem(user.getEstadoUsuario());
+        
+        usuario = user;
         
         //imagen de fondo
         setLocationRelativeTo(null);
         setResizable(false);
-        setTitle("Pantalla");
+        setTitle("Modificar Usuario");
         
         ((JPanel)getContentPane()).setOpaque(false);
         ImageIcon uno = new ImageIcon(this.getClass().getResource("/imagenes/PantallaAccion.jpg"));
@@ -73,10 +73,7 @@ public class PantallaAdminModificarUsuario extends javax.swing.JFrame {
         JTFUser = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
         JTFNombre = new javax.swing.JTextField();
-        jLabel11 = new javax.swing.JLabel();
         JTFCedula = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         JTFFechaNacimiento = new javax.swing.JTextField();
@@ -84,9 +81,6 @@ public class PantallaAdminModificarUsuario extends javax.swing.JFrame {
         JTFPassword = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         JTFApellido = new javax.swing.JTextField();
-        JCRol = new javax.swing.JComboBox();
-        JCEstado = new javax.swing.JComboBox();
-        JLBId = new javax.swing.JLabel();
 
         jLabel5.setText("Correo");
 
@@ -115,17 +109,11 @@ public class PantallaAdminModificarUsuario extends javax.swing.JFrame {
 
         jLabel4.setText("Username");
 
-        jLabel13.setText("Estado de Usuario");
-
-        jLabel12.setText("ID:");
-
         JTFNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTFNombreActionPerformed(evt);
             }
         });
-
-        jLabel11.setText("Rol");
 
         jLabel8.setText("Fecha de Nacimiento");
 
@@ -144,12 +132,6 @@ public class PantallaAdminModificarUsuario extends javax.swing.JFrame {
                 JTFApellidoActionPerformed(evt);
             }
         });
-
-        JCRol.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Administrador", "Inventario", "Comprador"}));
-
-        JCEstado.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Activo", "Inactivo" }));
-
-        JLBId.setText("            ");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -186,21 +168,13 @@ public class PantallaAdminModificarUsuario extends javax.swing.JFrame {
                             .addComponent(jLabel6)
                             .addComponent(jLabel8)
                             .addComponent(jLabel9)
-                            .addComponent(jLabel10)
-                            .addComponent(jLabel11)
-                            .addComponent(jLabel13))
+                            .addComponent(jLabel10))
                         .addGap(28, 28, 28)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(JTFDireccion)
+                            .addComponent(JTFDireccion, javax.swing.GroupLayout.DEFAULT_SIZE, 91, Short.MAX_VALUE)
                             .addComponent(JTFFechaNacimiento)
                             .addComponent(JTFMetodoDePago)
-                            .addComponent(JTFFechaRegistro)
-                            .addComponent(JCRol, 0, 91, Short.MAX_VALUE)
-                            .addComponent(JCEstado, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel12)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(JLBId, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(JTFFechaRegistro)))
                     .addComponent(JBModificarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(68, Short.MAX_VALUE))
         );
@@ -234,22 +208,14 @@ public class PantallaAdminModificarUsuario extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JTFPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel11)
-                    .addComponent(JCRol, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel7))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JTFCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel13)
-                    .addComponent(JCEstado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel5))
                 .addGap(18, 18, 18)
                 .addComponent(JBModificarUsuario)
-                .addGap(7, 7, 7)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(JLBId)
-                    .addComponent(jLabel12))
-                .addContainerGap(46, Short.MAX_VALUE))
+                .addContainerGap(67, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -283,15 +249,16 @@ public class PantallaAdminModificarUsuario extends javax.swing.JFrame {
     private void JBModificarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBModificarUsuarioActionPerformed
         
         //Creo objeto de usuario con los datos modificados
-        Usuario usu = new Usuario(JTFNombre.getText(), JTFApellido.getText(), JTFCedula.getText(), JTFUser.getText(), JTFPassword.getText(), JTFCorreo.getText(),JTFDireccion.getText(), JTFFechaNacimiento.getText(), JTFMetodoDePago.getText(), JTFFechaRegistro.getText(),(String)JCRol.getSelectedItem(), JLBId.getText(), (String)JCEstado.getSelectedItem());
+        
         //procedo a modificar los datos tanto en la tabla como en el archivo
-        resultado = datosUsuario.actualizarUsuario(usu);
+        
+        resultado = datosUsuario.actualizarUsuario(usuario);
         datosUsuario.todosLosUsuarios();
         
                 if (resultado == true) {
                         JOptionPane.showMessageDialog(null, "Usuario modificado con exito!", "Operacion Exitosa", JOptionPane.INFORMATION_MESSAGE);
                         //limpia();
-                        PantallaAdminTablaUsuarios table = new PantallaAdminTablaUsuarios(new javax.swing.JFrame(), true, idaux);
+                        PantallaInicialCompradorUsuario table = new PantallaInicialCompradorUsuario(usuario);
                         table.setVisible(true);
                     } else {
                         JOptionPane.showMessageDialog(null, "Operacion Fallida", "Error", JOptionPane.ERROR_MESSAGE);
@@ -325,30 +292,28 @@ public class PantallaAdminModificarUsuario extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PantallaAdminModificarUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PantallaModificarUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PantallaAdminModificarUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PantallaModificarUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PantallaAdminModificarUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PantallaModificarUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(PantallaAdminModificarUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PantallaModificarUsuario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             private Usuario user;
             public void run() {
-                new PantallaAdminModificarUsuario(user).setVisible(true);
+                new PantallaModificarUsuario(user).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton JBModificarUsuario;
-    private javax.swing.JComboBox JCEstado;
-    private javax.swing.JComboBox JCRol;
-    private javax.swing.JLabel JLBId;
     private javax.swing.JTextField JTFApellido;
     private javax.swing.JTextField JTFCedula;
     private javax.swing.JTextField JTFCorreo;
@@ -361,9 +326,6 @@ public class PantallaAdminModificarUsuario extends javax.swing.JFrame {
     private javax.swing.JTextField JTFUser;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

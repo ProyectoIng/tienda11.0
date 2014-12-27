@@ -1,86 +1,38 @@
 <root>
   <Producto>
-    <Nombre>y</Nombre>
-    <Seo>ty</Seo>
-    <Descripcion>y</Descripcion>
-    <Precio>ty</Precio>
-    <Imagen>ty</Imagen>
-    <Categoria>yu</Categoria>
-    <Proveedor>tyut</Proveedor>
-    <Id>uyt</Id>
-    <Estado>uy</Estado>
-    <CantidadMinima>yt</CantidadMinima>
+    <Nombre>poodle</Nombre>
+    <Descripcion>uhu</Descripcion>
+    <Precio>hu</Precio>
+    <Imagen>C:\Documents and Settings\luis\Escritorio\PantallaAdmin.jpg</Imagen>
+    <Categoria>perros</Categoria>
+    <Proveedor>ds</Proveedor>
+    <Id>2</Id>
+    <Estado>Activo</Estado>
+    <CantidadMinima>22</CantidadMinima>
+    <CantidadActual />
   </Producto>
   <Producto>
-    <Nombre>1</Nombre>
-    <Seo>1</Seo>
-    <Descripcion>1</Descripcion>
-    <Precio>1</Precio>
-    <Imagen>1</Imagen>
-    <Categoria>1</Categoria>
-    <Proveedor>1</Proveedor>
-    <Id>1</Id>
-    <Estado>1</Estado>
-    <CantidadMinima>1</CantidadMinima>
+    <Nombre>apartamento</Nombre>
+    <Descripcion>la lagunita</Descripcion>
+    <Precio>999999965</Precio>
+    <Imagen>C:\Documents and Settings\luis\Escritorio\virtuemart-logo.jpg</Imagen>
+    <Categoria>apartamentos</Categoria>
+    <Proveedor>la lacra</Proveedor>
+    <Id>3</Id>
+    <Estado>Activo</Estado>
+    <CantidadMinima>12</CantidadMinima>
+    <CantidadActual />
   </Producto>
   <Producto>
-    <Nombre>u</Nombre>
-    <Seo>uhu</Seo>
-    <Descripcion>hiu</Descripcion>
-    <Precio>hiuh</Precio>
-    <Imagen>uh</Imagen>
-    <Categoria>uh</Categoria>
-    <Proveedor>hu</Proveedor>
-    <Id>1</Id>
-    <Estado>huih</Estado>
-    <CantidadMinima>hiu</CantidadMinima>
-  </Producto>
-  <Producto>
-    <Nombre>u</Nombre>
-    <Seo>uhu</Seo>
-    <Descripcion>hiu</Descripcion>
-    <Precio>hiuh</Precio>
-    <Imagen>uh</Imagen>
-    <Categoria>uh</Categoria>
-    <Proveedor>hu</Proveedor>
+    <Nombre>haripan</Nombre>
+    <Descripcion>apn</Descripcion>
+    <Precio>1200</Precio>
+    <Imagen>C:\Documents and Settings\luis\Escritorio\result (1).jpg</Imagen>
+    <Categoria>harina</Categoria>
+    <Proveedor>locotron</Proveedor>
     <Id>4</Id>
-    <Estado>huih</Estado>
-    <CantidadMinima>hiu</CantidadMinima>
-  </Producto>
-  <Producto>
-    <Nombre>u</Nombre>
-    <Seo>uhu</Seo>
-    <Descripcion>hiu</Descripcion>
-    <Precio>hiuh</Precio>
-    <Imagen>uh</Imagen>
-    <Categoria>uh</Categoria>
-    <Proveedor>hu</Proveedor>
-    <Id>34534</Id>
-    <Estado>huih</Estado>
-    <CantidadMinima>hiu</CantidadMinima>
-  </Producto>
-  <Producto>
-    <Nombre>u</Nombre>
-    <Seo>uhu</Seo>
-    <Descripcion>hiu</Descripcion>
-    <Precio>hiuh</Precio>
-    <Imagen>uh</Imagen>
-    <Categoria>uh</Categoria>
-    <Proveedor>hu</Proveedor>
-    <Id>34534</Id>
-    <Estado>huih</Estado>
-    <CantidadMinima>hiu</CantidadMinima>
-  </Producto>
-  <Producto>
-    <Nombre>u</Nombre>
-    <Seo>uhu</Seo>
-    <Descripcion>hiu</Descripcion>
-    <Precio>hiuh</Precio>
-    <Imagen>uh</Imagen>
-    <Categoria>uh</Categoria>
-    <Proveedor>hu</Proveedor>
-    <Id>34534</Id>
-    <Estado>huih</Estado>
-    <CantidadMinima>hiu</CantidadMinima>
+    <Estado>Activo</Estado>
+    <CantidadMinima>12</CantidadMinima>
+    <CantidadActual />
   </Producto>
 </root>

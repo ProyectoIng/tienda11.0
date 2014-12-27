@@ -10,6 +10,7 @@ import Controlador.*;
 import Modelo.*;
 import Vista.*;
 import static Vista.PantallaAdminTablaProductos.idaux;
+import static Vista.PantallaIngresar.usuario;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -233,7 +234,7 @@ public class PantallaAdminTablaCategorias extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
                    
                    public void run() {
-                   new PantallaInicial().setVisible(true);
+                   new PantallaInicialInvUsuario(usuario).setVisible(true);
                    }
                    });
                    this.dispose();  
