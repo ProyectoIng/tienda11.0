@@ -41,7 +41,6 @@ public class PantallaInicialInvUsuario extends javax.swing.JFrame {
         jBGestionCategoria = new javax.swing.JButton();
         jBGestionProducto = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        jTextField2 = new javax.swing.JTextField();
         Logo1 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -49,6 +48,7 @@ public class PantallaInicialInvUsuario extends javax.swing.JFrame {
         JLUsuario = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(639, 450));
 
         jBGestionCategoria.setText("Gestion Categoria");
         jBGestionCategoria.addActionListener(new java.awt.event.ActionListener() {
@@ -66,9 +66,7 @@ public class PantallaInicialInvUsuario extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
-        jTextField2.setText("   ");
-
-        Logo1.setIcon(new javax.swing.ImageIcon("C:\\Documents and Settings\\luis\\Escritorio\\icon-onlineStore_opt (1).jpg")); // NOI18N
+        Logo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/icon-onlineStore_opt (1).jpg"))); // NOI18N
         Logo1.setText("                      ");
         Logo1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Logo1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -112,9 +110,7 @@ public class PantallaInicialInvUsuario extends javax.swing.JFrame {
                 .addComponent(Logo1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(53, 53, 53)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
+                        .addGap(346, 346, 346)
                         .addComponent(jLabel1)
                         .addGap(40, 40, 40)
                         .addComponent(jLabel4)
@@ -133,12 +129,11 @@ public class PantallaInicialInvUsuario extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Logo1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
+                        .addGap(23, 23, 23)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField2)
                             .addComponent(jLabel1)
                             .addComponent(jLabel4))
-                        .addGap(24, 24, 24)
+                        .addGap(27, 27, 27)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
                             .addComponent(JLUsuario))))
@@ -178,6 +173,7 @@ public class PantallaInicialInvUsuario extends javax.swing.JFrame {
                 new PantallaAdminTablaCategorias(new javax.swing.JFrame(), true, idaux).setVisible(true);
             }
         });
+        this.setVisible(false);
     }//GEN-LAST:event_jBGestionCategoriaActionPerformed
 
     private void jBGestionProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBGestionProductoActionPerformed
@@ -187,6 +183,7 @@ public class PantallaInicialInvUsuario extends javax.swing.JFrame {
                 new PantallaAdminTablaProductos(new javax.swing.JFrame(), true, idaux).setVisible(true);
             }
         });
+        this.setVisible(false);
     }//GEN-LAST:event_jBGestionProductoActionPerformed
 
     private void Logo1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Logo1MouseClicked
@@ -198,7 +195,7 @@ public class PantallaInicialInvUsuario extends javax.swing.JFrame {
                 new PantallaInicialComprador(usuario).setVisible(true);
             }
         });
-        this.dispose();
+        this.setVisible(false);
     }//GEN-LAST:event_Logo1MouseClicked
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
@@ -209,7 +206,7 @@ public class PantallaInicialInvUsuario extends javax.swing.JFrame {
                 new PantallaCompradorRegistrar().setVisible(true);
             }
         });
-        this.dispose();
+        this.setVisible(false);
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void jLabel1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jLabel1FocusGained
@@ -224,7 +221,7 @@ public class PantallaInicialInvUsuario extends javax.swing.JFrame {
                 new PantallaInicialComprador(null).setVisible(true);
             }
         });
-        this.dispose();
+        this.setVisible(false);
     }//GEN-LAST:event_jLabel4MouseClicked
 
     /**
@@ -271,6 +268,5 @@ public class PantallaInicialInvUsuario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }

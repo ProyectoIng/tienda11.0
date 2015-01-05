@@ -12,6 +12,10 @@ import javax.swing.JLayeredPane;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import javax.swing.RowFilter;
+import javax.swing.table.TableRowSorter;
 
 
 public class PantallaAdminTablaUsuarios extends javax.swing.JFrame {
@@ -19,6 +23,8 @@ public class PantallaAdminTablaUsuarios extends javax.swing.JFrame {
      DefaultTableModel modelo;
      private boolean resultado = false;
      static String idaux;
+     
+     private TableRowSorter trsfiltro;
      
      DaoUsuarioXml datosUsuario = new DaoUsuarioXml();//Creo objeto del controlador del usuario
 
@@ -57,6 +63,10 @@ public class PantallaAdminTablaUsuarios extends javax.swing.JFrame {
         getLayeredPane().add(fondo,JLayeredPane.FRAME_CONTENT_LAYER);
         fondo.setBounds(0,0,uno.getIconWidth(),uno.getIconHeight());
     }
+    
+    public void filtro() {
+   trsfiltro.setRowFilter(RowFilter.regexFilter(jTextField1.getText(), 0));
+   }
 
     private void llenaTabla(String id)
     {   
@@ -105,10 +115,9 @@ public class PantallaAdminTablaUsuarios extends javax.swing.JFrame {
         JBModficarUsuario = new javax.swing.JButton();
         JBVolver = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
-        setPreferredSize(new java.awt.Dimension(900, 500));
+        setPreferredSize(new java.awt.Dimension(860, 410));
 
         JBAgregarUsuario.setText("Agregar ");
         JBAgregarUsuario.addActionListener(new java.awt.event.ActionListener() {
@@ -151,7 +160,11 @@ public class PantallaAdminTablaUsuarios extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Buscar");
+        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField1KeyTyped(evt);
+            }
+        });
 
         jLabel1.setText("Buscar Usuario");
 
@@ -160,34 +173,29 @@ public class PantallaAdminTablaUsuarios extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(18, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(JBVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(JBModficarUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                            .addComponent(JBEliminarUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(JBAgregarUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(26, 26, 26)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(JBModficarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(JBAgregarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(JBEliminarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 693, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton1))
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(40, 40, 40))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(16, 16, 16)
                 .addComponent(jLabel1)
-                .addGap(5, 5, 5)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
-                .addGap(46, 46, 46)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
@@ -196,9 +204,9 @@ public class PantallaAdminTablaUsuarios extends javax.swing.JFrame {
                         .addComponent(JBModficarUsuario)
                         .addGap(18, 18, 18)
                         .addComponent(JBEliminarUsuario)))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(JBVolver)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         pack();
@@ -207,6 +215,7 @@ public class PantallaAdminTablaUsuarios extends javax.swing.JFrame {
     private void JBAgregarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBAgregarUsuarioActionPerformed
         PantallaAdminAgregarUsuario _PantallaAdminAgregarUsuario = new PantallaAdminAgregarUsuario();
         _PantallaAdminAgregarUsuario.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_JBAgregarUsuarioActionPerformed
 
     private void JBEliminarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBEliminarUsuarioActionPerformed
@@ -266,6 +275,8 @@ public class PantallaAdminTablaUsuarios extends javax.swing.JFrame {
         
         _PantallaAdminModificarUsuario.setVisible(true);
         
+        this.setVisible(false);
+        
         }else{
         
             JOptionPane.showMessageDialog(null, "No has seleccionado ningun usuario");
@@ -282,8 +293,23 @@ public class PantallaAdminTablaUsuarios extends javax.swing.JFrame {
                    new PantallaInicialAdminUsuario(usuario).setVisible(true);
                    }
                    });
-                   this.dispose();  
+                   this.setVisible(false); 
     }//GEN-LAST:event_JBVolverActionPerformed
+
+    private void jTextField1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyTyped
+        
+    jTextField1.addKeyListener(new KeyAdapter() {
+    public void keyReleased(final KeyEvent e) {
+    String cadena = (jTextField1.getText());
+    jTextField1.setText(cadena);
+    repaint();
+    filtro();
+    }
+    });
+    trsfiltro = new TableRowSorter(Table.getModel());
+    Table.setRowSorter(trsfiltro);
+        
+    }//GEN-LAST:event_jTextField1KeyTyped
 
     /**
      * @param args the command line arguments
@@ -327,7 +353,6 @@ public class PantallaAdminTablaUsuarios extends javax.swing.JFrame {
     private javax.swing.JButton JBModficarUsuario;
     private javax.swing.JButton JBVolver;
     private javax.swing.JTable Table;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;

@@ -15,6 +15,11 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 import org.apache.log4j.BasicConfigurator;
+import javax.swing.table.DefaultTableModel;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import javax.swing.RowFilter;
+import javax.swing.table.TableRowSorter;
 
 
 public class PantallaAdminTablaProductos extends javax.swing.JFrame {
@@ -24,6 +29,7 @@ public class PantallaAdminTablaProductos extends javax.swing.JFrame {
      static String idaux;
      DaoProductoXml datosProducto = new DaoProductoXml();//Creo objeto del controlador del producto
     
+     private TableRowSorter trsfiltro;
     
     public PantallaAdminTablaProductos(java.awt.Frame parent, boolean modal,String id) {
         initComponents();
@@ -37,8 +43,8 @@ public class PantallaAdminTablaProductos extends javax.swing.JFrame {
         modelo.addColumn("Proveedor");
         modelo.addColumn("Id");
         modelo.addColumn("Estado");
-        modelo.addColumn("CantidadMinima");
-        modelo.addColumn("CantidadActual");
+        modelo.addColumn("Cant.Mínima");
+        modelo.addColumn("Cant.Actual");
         
         this.jTable1.setModel(modelo);//a mi tabla table le asigno el tipo modelo que cree ahora
         
@@ -57,7 +63,10 @@ public class PantallaAdminTablaProductos extends javax.swing.JFrame {
         fondo.setBounds(0,0,uno.getIconWidth(),uno.getIconHeight());
     }
 
-   
+   public void filtro() {
+   trsfiltro.setRowFilter(RowFilter.regexFilter(jTextField1.getText(), 0));
+   }
+    
      private void llenaTabla(String id)
     {   
         DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
@@ -96,6 +105,10 @@ public class PantallaAdminTablaProductos extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         JBVolver = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+
+        setPreferredSize(new java.awt.Dimension(950, 400));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -138,36 +151,57 @@ public class PantallaAdminTablaProductos extends javax.swing.JFrame {
             }
         });
 
+        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField1KeyTyped(evt);
+            }
+        });
+
+        jLabel1.setText("Buscar Producto ");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 553, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 84, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(JBVolver, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 662, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(10, 10, 10))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(JBVolver, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(jButton3)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButton2)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButton1))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(JBVolver)
-                .addContainerGap())
+                .addContainerGap(56, Short.MAX_VALUE))
         );
 
         pack();
@@ -177,6 +211,7 @@ public class PantallaAdminTablaProductos extends javax.swing.JFrame {
         
         PantallaAdminAgregarProducto _PantallaAdminAgregarProducto = new PantallaAdminAgregarProducto();
         _PantallaAdminAgregarProducto.setVisible(true);
+        this.setVisible(false);
         
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -205,6 +240,7 @@ public class PantallaAdminTablaProductos extends javax.swing.JFrame {
         //abro la pantalla de modificar y le paso como parametro mi objeto
         PantallaAdminModificarProducto _PantallaModificarProducto = new PantallaAdminModificarProducto(pro);
         _PantallaModificarProducto.setVisible(true);
+        this.setVisible(false);
          //log4j
         Logger log = Logger.getLogger("Logger de Ejemplo");
         log.info("admin producto satisfactorio");
@@ -254,8 +290,23 @@ public class PantallaAdminTablaProductos extends javax.swing.JFrame {
                    new PantallaInicialInvUsuario(usuario).setVisible(true);
                    }
                    });
-                   this.dispose();  
+                   this.setVisible(false); 
     }//GEN-LAST:event_JBVolverActionPerformed
+
+    private void jTextField1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyTyped
+
+        jTextField1.addKeyListener(new KeyAdapter() {
+            public void keyReleased(final KeyEvent e) {
+                String cadena = (jTextField1.getText());
+                jTextField1.setText(cadena);
+                repaint();
+                filtro();
+            }
+        });
+        trsfiltro = new TableRowSorter(jTable1.getModel());
+        jTable1.setRowSorter(trsfiltro);
+
+    }//GEN-LAST:event_jTextField1KeyTyped
 
     /**
      * @param args the command line arguments
@@ -297,7 +348,9 @@ public class PantallaAdminTablaProductos extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

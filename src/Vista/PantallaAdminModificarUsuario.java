@@ -295,6 +295,7 @@ public class PantallaAdminModificarUsuario extends javax.swing.JFrame {
                         //limpia();
                         PantallaAdminTablaUsuarios table = new PantallaAdminTablaUsuarios(new javax.swing.JFrame(), true, idaux);
                         table.setVisible(true);
+                        this.setVisible(false);
                     } else {
                         JOptionPane.showMessageDialog(null, "Operacion Fallida", "Error", JOptionPane.ERROR_MESSAGE);
                     

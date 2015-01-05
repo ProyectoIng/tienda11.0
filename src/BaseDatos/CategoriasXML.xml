@@ -24,11 +24,11 @@
     <Id>8</Id>
   </Categoria>
   <Categoria>
-    <Nombre>aviones</Nombre>
-    <Id>9</Id>
+    <Nombre>Aviones</Nombre>
+    <Id>11</Id>
   </Categoria>
   <Categoria>
-    <Nombre>gatos</Nombre>
-    <Id>10</Id>
+    <Nombre>helados</Nombre>
+    <Id>9</Id>
   </Categoria>
 </root>

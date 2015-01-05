@@ -85,12 +85,12 @@ public class PantallaCompradorRegistrar extends javax.swing.JFrame {
         jDFechaNacimiento = new com.toedter.calendar.JDateChooser();
         jDFechaRegistro = new com.toedter.calendar.JDateChooser();
         jPanel7 = new javax.swing.JPanel();
-        jTextField6 = new javax.swing.JTextField();
         Logo5 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(639, 450));
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -169,9 +169,7 @@ public class PantallaCompradorRegistrar extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(JBAgregarUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addGap(143, 143, 143)
-                                .addComponent(JLBID, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
-                                .addGap(18, 18, 18)
+                                .addGap(206, 206, 206)
                                 .addComponent(JLBId, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -187,6 +185,10 @@ public class PantallaCompradorRegistrar extends javax.swing.JFrame {
                                     .addComponent(jDFechaRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                                 .addGap(0, 0, Short.MAX_VALUE)))))
                 .addGap(34, 34, 34))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(JLBID, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(94, 94, 94))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -227,17 +229,15 @@ public class PantallaCompradorRegistrar extends javax.swing.JFrame {
                     .addComponent(JTFCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7)
                     .addComponent(JBAgregarUsuario))
-                .addGap(45, 45, 45)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(JLBID, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(JLBId, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(JLBID)
+                .addGap(20, 20, 20)
+                .addComponent(JLBId, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
 
-        jTextField6.setText("   ");
-
-        Logo5.setIcon(new javax.swing.ImageIcon("C:\\Documents and Settings\\luis\\Escritorio\\icon-onlineStore_opt (1).jpg")); // NOI18N
+        Logo5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/icon-onlineStore_opt (1).jpg"))); // NOI18N
         Logo5.setText("                      ");
         Logo5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Logo5.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -268,9 +268,7 @@ public class PantallaCompradorRegistrar extends javax.swing.JFrame {
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addGap(49, 49, 49)
                 .addComponent(Logo5, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(53, 53, 53)
-                .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
+                .addGap(348, 348, 348)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
                 .addComponent(jLabel11)
@@ -283,9 +281,8 @@ public class PantallaCompradorRegistrar extends javax.swing.JFrame {
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Logo5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
+                        .addGap(23, 23, 23)
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField6)
                             .addComponent(jLabel11)
                             .addComponent(jLabel1))))
                 .addContainerGap())
@@ -307,7 +304,7 @@ public class PantallaCompradorRegistrar extends javax.swing.JFrame {
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(33, Short.MAX_VALUE))
         );
 
         pack();
@@ -368,7 +365,7 @@ public class PantallaCompradorRegistrar extends javax.swing.JFrame {
                    new PantallaInicialComprador(usuario).setVisible(true);
                    }
                    });
-                   this.dispose();
+                   this.setVisible(false);
                 //log4j
                 Logger log = Logger.getLogger("Logger de Ejemplo");
                 log.info("usuario añadido satisfactoriamente");
@@ -396,7 +393,7 @@ public class PantallaCompradorRegistrar extends javax.swing.JFrame {
                 new PantallaInicialComprador(usuario).setVisible(true);
             }
         });
-        this.dispose();
+        this.setVisible(false);
     }//GEN-LAST:event_Logo5MouseClicked
 
     private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
@@ -407,7 +404,7 @@ public class PantallaCompradorRegistrar extends javax.swing.JFrame {
                 new PantallaInicialComprador(null).setVisible(true);
             }
         });
-        this.dispose();
+        this.setVisible(false);
     }//GEN-LAST:event_jLabel11MouseClicked
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
@@ -419,7 +416,7 @@ public class PantallaCompradorRegistrar extends javax.swing.JFrame {
                    new PantallaIngresar().setVisible(true);
                    }
                    });
-                   this.dispose(); 
+                   this.setVisible(false);
     }//GEN-LAST:event_jLabel1MouseClicked
 
     /**
@@ -477,9 +474,6 @@ public class PantallaCompradorRegistrar extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -489,6 +483,5 @@ public class PantallaCompradorRegistrar extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel7;
-    private javax.swing.JTextField jTextField6;
     // End of variables declaration//GEN-END:variables
 }

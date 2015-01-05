@@ -82,9 +82,10 @@ public class PantallaModificarUsuario extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         JTFApellido = new javax.swing.JTextField();
         jPanel7 = new javax.swing.JPanel();
-        jTextField6 = new javax.swing.JTextField();
         Logo5 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
+
+        setPreferredSize(new java.awt.Dimension(750, 520));
 
         jLabel5.setText("Correo");
 
@@ -180,7 +181,7 @@ public class PantallaModificarUsuario extends javax.swing.JFrame {
                             .addComponent(JTFMetodoDePago)
                             .addComponent(JTFFechaRegistro)))
                     .addComponent(JBModificarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(68, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -224,9 +225,7 @@ public class PantallaModificarUsuario extends javax.swing.JFrame {
 
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
 
-        jTextField6.setText("   ");
-
-        Logo5.setIcon(new javax.swing.ImageIcon("C:\\Documents and Settings\\luis\\Escritorio\\icon-onlineStore_opt (1).jpg")); // NOI18N
+        Logo5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/icon-onlineStore_opt (1).jpg"))); // NOI18N
         Logo5.setText("                      ");
         Logo5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Logo5.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -250,11 +249,9 @@ public class PantallaModificarUsuario extends javax.swing.JFrame {
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addGap(49, 49, 49)
                 .addComponent(Logo5, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(53, 53, 53)
-                .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(118, 118, 118)
+                .addGap(434, 434, 434)
                 .addComponent(jLabel11)
-                .addContainerGap(164, Short.MAX_VALUE))
+                .addContainerGap(154, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -263,10 +260,8 @@ public class PantallaModificarUsuario extends javax.swing.JFrame {
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Logo5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField6)
-                            .addComponent(jLabel11))))
+                        .addGap(23, 23, 23)
+                        .addComponent(jLabel11)))
                 .addContainerGap())
         );
 
@@ -278,7 +273,7 @@ public class PantallaModificarUsuario extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(53, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -286,7 +281,7 @@ public class PantallaModificarUsuario extends javax.swing.JFrame {
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -315,6 +310,7 @@ public class PantallaModificarUsuario extends javax.swing.JFrame {
                         //limpia();
                         PantallaInicialCompradorUsuario table = new PantallaInicialCompradorUsuario(usu);
                         table.setVisible(true);
+                        this.setVisible(false);
                     } else {
                         JOptionPane.showMessageDialog(null, "Operacion Fallida", "Error", JOptionPane.ERROR_MESSAGE);
                     
@@ -330,6 +326,17 @@ public class PantallaModificarUsuario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_JTFDireccionActionPerformed
 
+    private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
+
+        java.awt.EventQueue.invokeLater(new Runnable() {
+
+            public void run() {
+                new PantallaInicialComprador(null).setVisible(true);
+            }
+        });
+       this.setVisible(false);
+    }//GEN-LAST:event_jLabel11MouseClicked
+
     private void Logo5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Logo5MouseClicked
         // TODO add your handling code here:
 
@@ -339,19 +346,8 @@ public class PantallaModificarUsuario extends javax.swing.JFrame {
                 new PantallaInicialComprador(usuario).setVisible(true);
             }
         });
-        this.dispose();
+        this.setVisible(false);
     }//GEN-LAST:event_Logo5MouseClicked
-
-    private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
-
-        java.awt.EventQueue.invokeLater(new Runnable() {
-
-            public void run() {
-                new PantallaInicialComprador(null).setVisible(true);
-            }
-        });
-        this.dispose();
-    }//GEN-LAST:event_jLabel11MouseClicked
 
     /**
      * @param args the command line arguments
@@ -402,10 +398,6 @@ public class PantallaModificarUsuario extends javax.swing.JFrame {
     private javax.swing.JTextField JTFNombre;
     private javax.swing.JTextField JTFPassword;
     private javax.swing.JTextField JTFUser;
-    private javax.swing.JLabel Logo1;
-    private javax.swing.JLabel Logo2;
-    private javax.swing.JLabel Logo3;
-    private javax.swing.JLabel Logo4;
     private javax.swing.JLabel Logo5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -419,15 +411,6 @@ public class PantallaModificarUsuario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
     // End of variables declaration//GEN-END:variables
 }

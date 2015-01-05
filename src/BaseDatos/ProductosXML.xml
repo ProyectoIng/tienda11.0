@@ -12,27 +12,39 @@
     <CantidadActual />
   </Producto>
   <Producto>
-    <Nombre>haripan</Nombre>
-    <Descripcion>apn</Descripcion>
-    <Precio>1200</Precio>
-    <Imagen>C:\Documents and Settings\luis\Escritorio\result (1).jpg</Imagen>
-    <Categoria>harina</Categoria>
-    <Proveedor>locotron</Proveedor>
-    <Id>4</Id>
+    <Nombre>lancer</Nombre>
+    <Descripcion>locura</Descripcion>
+    <Precio>123333</Precio>
+    <Imagen>C:\Documents and Settings\luis\Escritorio\virtuemart-logo.jpg</Imagen>
+    <Categoria>carros</Categoria>
+    <Proveedor>LACRITA</Proveedor>
+    <Id>6</Id>
+    <Estado>Inacivo</Estado>
+    <CantidadMinima>11</CantidadMinima>
+    <CantidadActual />
+  </Producto>
+  <Producto>
+    <Nombre>Microhondas</Nombre>
+    <Descripcion>Eléctrico</Descripcion>
+    <Precio>1212121</Precio>
+    <Imagen>C:\Documents and Settings\luis\Escritorio\PantallaPrincipal.jpg</Imagen>
+    <Categoria>cocina</Categoria>
+    <Proveedor>PUERCO</Proveedor>
+    <Id>7</Id>
     <Estado>Activo</Estado>
     <CantidadMinima>12</CantidadMinima>
     <CantidadActual />
   </Producto>
   <Producto>
-    <Nombre>carro</Nombre>
-    <Descripcion>auto</Descripcion>
-    <Precio>23333</Precio>
+    <Nombre>Doña Juana</Nombre>
+    <Descripcion>Fina</Descripcion>
+    <Precio>22222</Precio>
     <Imagen>C:\Documents and Settings\luis\Escritorio\result (1).jpg</Imagen>
-    <Categoria>Electrónicos</Categoria>
-    <Proveedor>carrero</Proveedor>
-    <Id>5</Id>
-    <Estado>Inactivo</Estado>
-    <CantidadMinima>1212</CantidadMinima>
+    <Categoria>harina</Categoria>
+    <Proveedor>Petare</Proveedor>
+    <Id>4</Id>
+    <Estado>Activo</Estado>
+    <CantidadMinima>150</CantidadMinima>
     <CantidadActual />
   </Producto>
 </root>

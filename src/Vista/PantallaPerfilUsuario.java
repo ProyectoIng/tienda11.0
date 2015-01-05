@@ -97,11 +97,11 @@ public class PantallaPerfilUsuario extends javax.swing.JFrame {
         jLFechaRegistro = new javax.swing.JLabel();
         jBModificar = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
-        jTextField2 = new javax.swing.JTextField();
         Logo1 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(639, 450));
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -255,9 +255,7 @@ public class PantallaPerfilUsuario extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
-        jTextField2.setText("   ");
-
-        Logo1.setIcon(new javax.swing.ImageIcon("C:\\Documents and Settings\\luis\\Escritorio\\icon-onlineStore_opt (1).jpg")); // NOI18N
+        Logo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/icon-onlineStore_opt (1).jpg"))); // NOI18N
         Logo1.setText("                      ");
         Logo1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Logo1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -281,9 +279,7 @@ public class PantallaPerfilUsuario extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(49, 49, 49)
                 .addComponent(Logo1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(53, 53, 53)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(118, 118, 118)
+                .addGap(434, 434, 434)
                 .addComponent(jLabel11)
                 .addContainerGap(90, Short.MAX_VALUE))
         );
@@ -294,10 +290,8 @@ public class PantallaPerfilUsuario extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Logo1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField2)
-                            .addComponent(jLabel11))))
+                        .addGap(23, 23, 23)
+                        .addComponent(jLabel11)))
                 .addContainerGap())
         );
 
@@ -328,8 +322,11 @@ public class PantallaPerfilUsuario extends javax.swing.JFrame {
             
             public void run() {
                 new PantallaModificarUsuario(usuario).setVisible(true);
+               
             }
+            
         });
+        this.setVisible(false);
     }//GEN-LAST:event_jBModificarActionPerformed
 
     private void Logo1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Logo1MouseClicked
@@ -341,7 +338,7 @@ public class PantallaPerfilUsuario extends javax.swing.JFrame {
                 new PantallaInicialComprador(usuario).setVisible(true);
             }
         });
-        this.dispose();
+        this.setVisible(false);
     }//GEN-LAST:event_Logo1MouseClicked
 
     private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
@@ -352,7 +349,7 @@ public class PantallaPerfilUsuario extends javax.swing.JFrame {
                 new PantallaInicialComprador(null).setVisible(true);
             }
         });
-        this.dispose();
+        this.setVisible(false);
     }//GEN-LAST:event_jLabel11MouseClicked
 
     /**
@@ -420,6 +417,5 @@ public class PantallaPerfilUsuario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }

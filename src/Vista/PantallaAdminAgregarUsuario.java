@@ -313,6 +313,7 @@ public class PantallaAdminAgregarUsuario extends javax.swing.JFrame {
                 //limpia();
                 PantallaAdminTablaUsuarios table = new PantallaAdminTablaUsuarios(new javax.swing.JFrame(), true, "");
                 table.setVisible(true);
+                this.setVisible(false);
                 //log4j
                 Logger log = Logger.getLogger("Logger de Ejemplo");
                 log.info("usuario añadido satisfactoriamente");

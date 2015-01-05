@@ -151,6 +151,7 @@ public class PantallaAdminModificarCategoria extends javax.swing.JFrame {
                         //limpia();
                         PantallaAdminTablaCategorias _PantallaAdminTablaCategorias  = new PantallaAdminTablaCategorias(new javax.swing.JFrame(), true, idaux);
                         _PantallaAdminTablaCategorias.setVisible(true);
+                        this.setVisible(false);
                     } else {
                         JOptionPane.showMessageDialog(null, "Operacion Fallida", "Error", JOptionPane.ERROR_MESSAGE);
                     

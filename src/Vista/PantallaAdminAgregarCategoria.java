@@ -179,7 +179,7 @@ public class PantallaAdminAgregarCategoria extends javax.swing.JFrame {
                         new PantallaAdminTablaCategorias(new javax.swing.JFrame(), true, idaux).setVisible(true);
                         }
                         });
-                        this.dispose();  
+                        this.setVisible(false);
 
                         //log4j
                         Logger log = Logger.getLogger("Logger de Ejemplo");

@@ -45,36 +45,6 @@
     <EstadoDeUsuario>Activo</EstadoDeUsuario>
   </Usuario>
   <Usuario>
-    <Nombre>g</Nombre>
-    <Apellido>g</Apellido>
-    <Cedula>g</Cedula>
-    <Username>g</Username>
-    <Password>g</Password>
-    <Correo>g</Correo>
-    <DireccionFisica>g</DireccionFisica>
-    <FechaDeNacimiento>g</FechaDeNacimiento>
-    <MetodoDePago>g</MetodoDePago>
-    <FechaDeRegistro>g</FechaDeRegistro>
-    <Rol>Inventario</Rol>
-    <Id>13</Id>
-    <EstadoDeUsuario>Activo</EstadoDeUsuario>
-  </Usuario>
-  <Usuario>
-    <Nombre>pepe</Nombre>
-    <Apellido>pepe</Apellido>
-    <Cedula>pepe</Cedula>
-    <Username>pepe</Username>
-    <Password>pepe</Password>
-    <Correo>pepe</Correo>
-    <DireccionFisica>pepe</DireccionFisica>
-    <FechaDeNacimiento>11/5/2008</FechaDeNacimiento>
-    <MetodoDePago>pepe</MetodoDePago>
-    <FechaDeRegistro>11/11/2014</FechaDeRegistro>
-    <Rol>Inventario</Rol>
-    <Id>14</Id>
-    <EstadoDeUsuario>Inactivo</EstadoDeUsuario>
-  </Usuario>
-  <Usuario>
     <Nombre>qw</Nombre>
     <Apellido>k</Apellido>
     <Cedula>k</Cedula>
@@ -90,18 +60,33 @@
     <EstadoDeUsuario>Activo</EstadoDeUsuario>
   </Usuario>
   <Usuario>
-    <Nombre>Lucas</Nombre>
-    <Apellido>Leiva</Apellido>
-    <Cedula>o</Cedula>
-    <Username>o</Username>
-    <Password>o</Password>
-    <Correo>o</Correo>
-    <DireccionFisica>Lucas</DireccionFisica>
-    <FechaDeNacimiento>14/11/0000</FechaDeNacimiento>
-    <MetodoDePago>o</MetodoDePago>
-    <FechaDeRegistro>27/12/2014</FechaDeRegistro>
+    <Nombre>papo</Nombre>
+    <Apellido>papo</Apellido>
+    <Cedula>pepe</Cedula>
+    <Username>p</Username>
+    <Password>p</Password>
+    <Correo>pepe</Correo>
+    <DireccionFisica>pepe</DireccionFisica>
+    <FechaDeNacimiento>11/5/2008</FechaDeNacimiento>
+    <MetodoDePago>pepe</MetodoDePago>
+    <FechaDeRegistro>11/11/2014</FechaDeRegistro>
+    <Rol>Inventario</Rol>
+    <Id>14</Id>
+    <EstadoDeUsuario>Inactivo</EstadoDeUsuario>
+  </Usuario>
+  <Usuario>
+    <Nombre>Andres</Nombre>
+    <Apellido>Perez</Apellido>
+    <Cedula>21098872</Cedula>
+    <Username>a</Username>
+    <Password>a</Password>
+    <Correo>COmpraaaa</Correo>
+    <DireccionFisica>aaaaa</DireccionFisica>
+    <FechaDeNacimiento>18/2/2010</FechaDeNacimiento>
+    <MetodoDePago>tarjeta debito</MetodoDePago>
+    <FechaDeRegistro>13/1/2008</FechaDeRegistro>
     <Rol>Comprador</Rol>
-    <Id>12</Id>
+    <Id>15</Id>
     <EstadoDeUsuario>Activo</EstadoDeUsuario>
   </Usuario>
 </root>

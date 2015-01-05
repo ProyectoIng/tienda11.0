@@ -316,6 +316,7 @@ public class PantallaAdminAgregarProducto extends javax.swing.JFrame {
                         //limpia();
                         PantallaAdminTablaProductos table = new PantallaAdminTablaProductos(new javax.swing.JFrame(), true, idaux);
                         table.setVisible(true);
+                        this.setVisible(false);
                         //log4j
                         Logger log = Logger.getLogger("Logger de Ejemplo");
                         log.info("preceso agregarProducto realizado");

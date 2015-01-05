@@ -138,7 +138,7 @@ public class PantallaAdminModificarProducto extends javax.swing.JFrame {
 
         JCCategoria.setModel(new javax.swing.DefaultComboBoxModel(new String[] {  }));
 
-        JCEstado.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Activo", "Inacivo" }));
+        JCEstado.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Activo", "Inactivo" }));
 
         jLabel2.setText("Cantidad Actual:");
 
@@ -259,6 +259,8 @@ public class PantallaAdminModificarProducto extends javax.swing.JFrame {
                         //limpia();
                         PantallaAdminTablaProductos _PantallaAdminTablaProductos  = new PantallaAdminTablaProductos(new javax.swing.JFrame(), true, idaux);
                         _PantallaAdminTablaProductos.setVisible(true);
+                        this.setVisible(false);
+                        
                     } else {
                         JOptionPane.showMessageDialog(null, "Operacion Fallida", "Error", JOptionPane.ERROR_MESSAGE);
                     

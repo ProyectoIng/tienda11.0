@@ -60,12 +60,12 @@ static String idaux;
         JtextContraseña = new javax.swing.JTextField();
         JtextUsuario = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
-        jTextField2 = new javax.swing.JTextField();
         Logo1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         JLUsuario = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(639, 450));
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -120,9 +120,7 @@ static String idaux;
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
-        jTextField2.setText("   ");
-
-        Logo1.setIcon(new javax.swing.ImageIcon("C:\\Documents and Settings\\luis\\Escritorio\\icon-onlineStore_opt (1).jpg")); // NOI18N
+        Logo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/icon-onlineStore_opt (1).jpg"))); // NOI18N
         Logo1.setText("                      ");
         Logo1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Logo1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -155,9 +153,7 @@ static String idaux;
                 .addComponent(Logo1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(53, 53, 53)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
+                        .addGap(346, 346, 346)
                         .addComponent(jLabel2))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(121, 121, 121)
@@ -171,10 +167,8 @@ static String idaux;
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Logo1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField2)
-                            .addComponent(jLabel2))
+                        .addGap(23, 23, 23)
+                        .addComponent(jLabel2)
                         .addGap(18, 18, 18)
                         .addComponent(JLUsuario)))
                 .addContainerGap())
@@ -224,7 +218,7 @@ static String idaux;
                                 new PantallaInicialAdminUsuario(usuario).setVisible(true);
                             }
                         });
-                        this.dispose();
+                        this.setVisible(false);
 
                     }
 
@@ -236,7 +230,7 @@ static String idaux;
                                 new PantallaInicialInvUsuario(usuario).setVisible(true);
                             }
                         });
-                        this.dispose();
+                        this.setVisible(false);
 
                         System.out.println(usuario.getRol());
 
@@ -249,7 +243,7 @@ static String idaux;
                                 new PantallaInicialCompradorUsuario(usuario).setVisible(true);
                             }
                         });
-                        this.dispose();
+                        this.setVisible(false);
 
                     }
 
@@ -279,7 +273,7 @@ static String idaux;
                 new PantallaInicialComprador(usuario).setVisible(true);
             }
         });
-        this.dispose();
+        this.setVisible(false);
     }//GEN-LAST:event_Logo1MouseClicked
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
@@ -290,7 +284,7 @@ static String idaux;
                 new PantallaCompradorRegistrar().setVisible(true);
             }
         });
-        this.dispose();
+        this.setVisible(false);
     }//GEN-LAST:event_jLabel2MouseClicked
 
     private void jLabel2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jLabel2FocusGained
@@ -344,6 +338,5 @@ static String idaux;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }

@@ -6,7 +6,17 @@
 
 package Vista;
 
+import Controlador.DaoProductoXml;
+import Modelo.Producto;
 import Modelo.Usuario;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.util.ArrayList;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import javax.swing.RowFilter;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
@@ -14,12 +24,34 @@ import Modelo.Usuario;
  */
 public class PantallaInicialCompradorUsuario extends javax.swing.JFrame {
 
-    static String idaux;
-    static Usuario usuario; 
+     static String idaux;
+    static Usuario usuario;
+    DefaultTableModel modelo;
+     private boolean resultado = false;
+    
+     DaoProductoXml datosProducto = new DaoProductoXml();//Creo objeto del controlador del producto
+    
+     private TableRowSorter trsfiltro;
     
     public PantallaInicialCompradorUsuario(Usuario user) {
         initComponents();
         usuario =  user;
+         modelo = new DefaultTableModel();
+        modelo.addColumn("Nombre");
+        modelo.addColumn("Descripcion");
+        modelo.addColumn("Precio");
+        modelo.addColumn("Imagen");
+        modelo.addColumn("Categoria");
+        modelo.addColumn("Proveedor");
+        modelo.addColumn("Id");
+        modelo.addColumn("Estado");
+        modelo.addColumn("Cant.Mínima");
+        modelo.addColumn("Cant.Actual");
+        
+        this.jTable1.setModel(modelo);//a mi tabla table le asigno el tipo modelo que cree ahora
+        
+        llenaTabla();//Lleno la tabla
+        
         setLocationRelativeTo(null);
         setResizable(false);
         
@@ -37,20 +69,28 @@ public class PantallaInicialCompradorUsuario extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
-        jTextField2 = new javax.swing.JTextField();
+        jTextField1 = new javax.swing.JTextField();
         Logo1 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         JLUsuario = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(950, 450));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
-        jTextField2.setText("   ");
+        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jTextField1KeyTyped(evt);
+            }
+        });
 
-        Logo1.setIcon(new javax.swing.ImageIcon("C:\\Documents and Settings\\luis\\Escritorio\\icon-onlineStore_opt (1).jpg")); // NOI18N
+        Logo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/icon-onlineStore_opt (1).jpg"))); // NOI18N
         Logo1.setText("                      ");
         Logo1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Logo1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -98,21 +138,19 @@ public class PantallaInicialCompradorUsuario extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(49, 49, 49)
                 .addComponent(Logo1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(53, 53, 53)
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(53, 53, 53)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
                         .addComponent(jLabel1)
                         .addGap(40, 40, 40)
-                        .addComponent(jLabel4)
-                        .addContainerGap(69, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel4))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addGap(18, 18, 18)
-                        .addComponent(JLUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(7, 7, 7))))
+                        .addComponent(JLUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -123,7 +161,7 @@ public class PantallaInicialCompradorUsuario extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField2)
+                            .addComponent(jTextField1)
                             .addComponent(jLabel1)
                             .addComponent(jLabel4))
                         .addGap(24, 24, 24)
@@ -133,22 +171,82 @@ public class PantallaInicialCompradorUsuario extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        jButton1.setText("Ver Información del Producto");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(66, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 719, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(63, 63, 63))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 302, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public void filtro() {
+   trsfiltro.setRowFilter(RowFilter.regexFilter(jTextField1.getText(), 0));
+   }
+    
+     private void llenaTabla()
+    {   
+        DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
+        modelo.setRowCount(0);
+        
+        ArrayList<Producto> Lista = datosProducto.todosLosProductos();
+        
+
+        for (Producto pro : Lista)
+        {
+           
+
+             if (pro != null) {
+               String[] row = {pro.getNombre(),pro.getDescripcion(),pro.getPrecio(),pro.getImagen(),pro.getCategoria(),pro.getProveedor(),pro.getIdProducto(),pro.getEstadoProducto(),pro.getCantidadMinima(),pro.getCantidadActual()};
+               modelo.addRow(row);
+             }
+            
+            
+        jTable1.setModel(modelo);
+            
+            
+            
+        }
+            
+     }   
+    
     private void Logo1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Logo1MouseClicked
         // TODO add your handling code here:
 
@@ -158,7 +256,7 @@ public class PantallaInicialCompradorUsuario extends javax.swing.JFrame {
                 new PantallaInicialComprador(usuario).setVisible(true);
             }
         });
-        this.dispose();
+        this.setVisible(false);
 
     }//GEN-LAST:event_Logo1MouseClicked
 
@@ -170,7 +268,7 @@ public class PantallaInicialCompradorUsuario extends javax.swing.JFrame {
                 new PantallaCompradorRegistrar().setVisible(true);
             }
         });
-        this.dispose();
+        this.setVisible(false);
 
     }//GEN-LAST:event_jLabel1MouseClicked
 
@@ -186,7 +284,7 @@ public class PantallaInicialCompradorUsuario extends javax.swing.JFrame {
                 new PantallaInicialComprador(null).setVisible(true);
             }
         });
-        this.dispose();
+        this.setVisible(false);
 
     }//GEN-LAST:event_jLabel4MouseClicked
 
@@ -199,9 +297,60 @@ public class PantallaInicialCompradorUsuario extends javax.swing.JFrame {
                 new PantallaPerfilUsuario(usuario).setVisible(true);
             }
         });
-        this.dispose();
+        this.setVisible(false);
         
     }//GEN-LAST:event_JLUsuarioMouseClicked
+
+    private void jTextField1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyTyped
+        
+        jTextField1.addKeyListener(new KeyAdapter() {
+            public void keyReleased(final KeyEvent e) {
+                String cadena = (jTextField1.getText());
+                jTextField1.setText(cadena);
+                repaint();
+                filtro();
+            }
+        });
+        trsfiltro = new TableRowSorter(jTable1.getModel());
+        jTable1.setRowSorter(trsfiltro);
+        
+    }//GEN-LAST:event_jTextField1KeyTyped
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        
+         int filaSeleccionada = jTable1.getSelectedRow();//Obtengo la fila seleccionada
+        String nombre,descripcion,precio,imagen,categoria,proveedor,id,estado,cantidadMinima,cantidadActual;
+        //meto los valores de la fila seleccionada en las variables
+        
+        if (filaSeleccionada >= 0 ){
+        nombre = jTable1.getValueAt(filaSeleccionada, 0).toString();
+        descripcion = jTable1.getValueAt(filaSeleccionada, 1).toString();
+        precio = jTable1.getValueAt(filaSeleccionada, 2).toString();
+        imagen = jTable1.getValueAt(filaSeleccionada, 3).toString();
+        categoria = jTable1.getValueAt(filaSeleccionada, 4).toString();
+        proveedor = jTable1.getValueAt(filaSeleccionada, 5).toString();
+        id = jTable1.getValueAt(filaSeleccionada, 6).toString();
+        estado = jTable1.getValueAt(filaSeleccionada, 7).toString();
+        cantidadMinima = jTable1.getValueAt(filaSeleccionada, 8).toString();
+        cantidadActual = jTable1.getValueAt(filaSeleccionada, 9).toString();
+        
+        //creo objeto producto
+        Producto pro = new Producto(nombre, descripcion, precio, imagen, categoria, proveedor, id, estado, cantidadMinima, cantidadActual);
+        PantallaInformacionProducto pantalla = new PantallaInformacionProducto(pro);
+        pantalla.setVisible(true);
+        this.setVisible(false);
+         //log4j
+        Logger log = Logger.getLogger("Logger de Ejemplo");
+        log.info("admin producto satisfactorio");
+        }else{
+        
+            JOptionPane.showMessageDialog(null, "No has seleccionado ningun producto");
+          //log4j
+           Logger log = Logger.getLogger("Logger de Ejemplo");
+            log.warning("error no se encontro ninguna seleccion");   
+        }
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -242,10 +391,13 @@ public class PantallaInicialCompradorUsuario extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel JLUsuario;
     private javax.swing.JLabel Logo1;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
