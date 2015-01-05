@@ -30,36 +30,6 @@
     <EstadoDeUsuario>Inactivo</EstadoDeUsuario>
   </Usuario>
   <Usuario>
-    <Nombre>lu</Nombre>
-    <Apellido>lu</Apellido>
-    <Cedula>lu</Cedula>
-    <Username>lu</Username>
-    <Password>lu</Password>
-    <Correo>lu</Correo>
-    <DireccionFisica>lu</DireccionFisica>
-    <FechaDeNacimiento>lu</FechaDeNacimiento>
-    <MetodoDePago>lul</MetodoDePago>
-    <FechaDeRegistro>lu</FechaDeRegistro>
-    <Rol>Administrador</Rol>
-    <Id>2</Id>
-    <EstadoDeUsuario>Activo</EstadoDeUsuario>
-  </Usuario>
-  <Usuario>
-    <Nombre>qw</Nombre>
-    <Apellido>k</Apellido>
-    <Cedula>k</Cedula>
-    <Username>k</Username>
-    <Password>k</Password>
-    <Correo>k</Correo>
-    <DireccionFisica>qw</DireccionFisica>
-    <FechaDeNacimiento>5/11/2014</FechaDeNacimiento>
-    <MetodoDePago>opopop</MetodoDePago>
-    <FechaDeRegistro>6/11/2014</FechaDeRegistro>
-    <Rol>Comprador</Rol>
-    <Id>10</Id>
-    <EstadoDeUsuario>Activo</EstadoDeUsuario>
-  </Usuario>
-  <Usuario>
     <Nombre>papo</Nombre>
     <Apellido>papo</Apellido>
     <Cedula>pepe</Cedula>
@@ -87,6 +57,66 @@
     <FechaDeRegistro>13/1/2008</FechaDeRegistro>
     <Rol>Comprador</Rol>
     <Id>15</Id>
+    <EstadoDeUsuario>Activo</EstadoDeUsuario>
+  </Usuario>
+  <Usuario>
+    <Nombre>Pedro</Nombre>
+    <Apellido>Gomez</Apellido>
+    <Cedula>12345</Cedula>
+    <Username>pedro</Username>
+    <Password>pedro</Password>
+    <Correo>p@hot.com</Correo>
+    <DireccionFisica>Su casa</DireccionFisica>
+    <FechaDeNacimiento>10/2/1990</FechaDeNacimiento>
+    <MetodoDePago>ahorro</MetodoDePago>
+    <FechaDeRegistro>9/4/2002</FechaDeRegistro>
+    <Rol>Administrador</Rol>
+    <Id>17</Id>
+    <EstadoDeUsuario>Activo</EstadoDeUsuario>
+  </Usuario>
+  <Usuario>
+    <Nombre>lu</Nombre>
+    <Apellido>lu</Apellido>
+    <Cedula>lu</Cedula>
+    <Username>lu</Username>
+    <Password>lu</Password>
+    <Correo>lu</Correo>
+    <DireccionFisica>lu</DireccionFisica>
+    <FechaDeNacimiento>14/3/1995</FechaDeNacimiento>
+    <MetodoDePago>Tarjeta</MetodoDePago>
+    <FechaDeRegistro>12/5/2012</FechaDeRegistro>
+    <Rol>Administrador</Rol>
+    <Id>2</Id>
+    <EstadoDeUsuario>Activo</EstadoDeUsuario>
+  </Usuario>
+  <Usuario>
+    <Nombre>Leo</Nombre>
+    <Apellido>Perez</Apellido>
+    <Cedula>222222</Cedula>
+    <Username>leo</Username>
+    <Password>leo</Password>
+    <Correo>leo@leo</Correo>
+    <DireccionFisica>Paraiso</DireccionFisica>
+    <FechaDeNacimiento>10/0/1967</FechaDeNacimiento>
+    <MetodoDePago>tarjeta</MetodoDePago>
+    <FechaDeRegistro>13/0/2015</FechaDeRegistro>
+    <Rol>Comprador</Rol>
+    <Id>18</Id>
+    <EstadoDeUsuario>Activo</EstadoDeUsuario>
+  </Usuario>
+  <Usuario>
+    <Nombre>Karla</Nombre>
+    <Apellido>Gonzales</Apellido>
+    <Cedula>12345555</Cedula>
+    <Username>k</Username>
+    <Password>k</Password>
+    <Correo>k@k</Correo>
+    <DireccionFisica>AltaGracia</DireccionFisica>
+    <FechaDeNacimiento>5/11/2014</FechaDeNacimiento>
+    <MetodoDePago>Efectivo</MetodoDePago>
+    <FechaDeRegistro>6/11/2014</FechaDeRegistro>
+    <Rol>Comprador</Rol>
+    <Id>10</Id>
     <EstadoDeUsuario>Activo</EstadoDeUsuario>
   </Usuario>
 </root>

@@ -43,10 +43,7 @@ public class PantallaInicialComprador extends javax.swing.JFrame {
         modelo.addColumn("Imagen");
         modelo.addColumn("Categoria");
         modelo.addColumn("Proveedor");
-        modelo.addColumn("Id");
-        modelo.addColumn("Estado");
-        modelo.addColumn("Cant.Mínima");
-        modelo.addColumn("Cant.Actual");
+        
         
         this.jTable1.setModel(modelo);//a mi tabla table le asigno el tipo modelo que cree ahora
         
@@ -223,7 +220,7 @@ public class PantallaInicialComprador extends javax.swing.JFrame {
            
 
              if (pro != null) {
-               String[] row = {pro.getNombre(),pro.getDescripcion(),pro.getPrecio(),pro.getImagen(),pro.getCategoria(),pro.getProveedor(),pro.getIdProducto(),pro.getEstadoProducto(),pro.getCantidadMinima(),pro.getCantidadActual()};
+               String[] row = {pro.getNombre(),pro.getDescripcion(),pro.getPrecio(),pro.getImagen(),pro.getCategoria(),pro.getProveedor()};
                modelo.addRow(row);
              }
             
@@ -308,13 +305,10 @@ public class PantallaInicialComprador extends javax.swing.JFrame {
         imagen = jTable1.getValueAt(filaSeleccionada, 3).toString();
         categoria = jTable1.getValueAt(filaSeleccionada, 4).toString();
         proveedor = jTable1.getValueAt(filaSeleccionada, 5).toString();
-        id = jTable1.getValueAt(filaSeleccionada, 6).toString();
-        estado = jTable1.getValueAt(filaSeleccionada, 7).toString();
-        cantidadMinima = jTable1.getValueAt(filaSeleccionada, 8).toString();
-        cantidadActual = jTable1.getValueAt(filaSeleccionada, 9).toString();
+        
         
         //creo objeto producto
-        Producto pro = new Producto(nombre, descripcion, precio, imagen, categoria, proveedor, id, estado, cantidadMinima, cantidadActual);
+        Producto pro = new Producto(nombre, descripcion, precio, imagen, categoria, proveedor, "", "", "", "");
         PantallaInformacionProducto pantalla = new PantallaInformacionProducto(pro);
         pantalla.setVisible(true);
         this.setVisible(false);

@@ -53,7 +53,7 @@ public class PantallaAdminTablaCategorias extends javax.swing.JFrame {
         setTitle("Pantalla");
         
         ((JPanel)getContentPane()).setOpaque(false);
-        ImageIcon uno = new ImageIcon(this.getClass().getResource("/imagenes/PantallaAdmin.jpg"));
+        ImageIcon uno = new ImageIcon(this.getClass().getResource("/imagenes/04092gverdeprimavera.jpg"));
         JLabel fondo = new JLabel();
         fondo.setIcon(uno);
         getLayeredPane().add(fondo,JLayeredPane.FRAME_CONTENT_LAYER);
